@@ -788,7 +788,7 @@ html.dark-mode img, html.dark-mode canvas { filter: invert(1) hue-rotate(180deg)
 <link rel="manifest" href="/manifest.json">
 </head><body>
 <nav class="nav">
-  <div class="brand">SRU <b>TT</b> <span style="font-size:9px;background:#eab308;color:#000;padding:2px 5px;border-radius:4px;margin-left:5px">BETA</span></div>
+  <div class="brand">SRU <b>TT</b></div>
   <div class="links" id="navLinks">
     <button data-page="home" class="active">Home</button>
     <button data-page="student">Student</button>
@@ -797,10 +797,10 @@ html.dark-mode img, html.dark-mode canvas { filter: invert(1) hue-rotate(180deg)
     <button data-page="verify">Verify</button>
     <button data-page="free">Free Rooms</button>
     <button id="darkModeToggle" class="beta-link" style="background:#334155;color:#fff!important;margin-left:auto">🌙 Dark Mode</button>
-    <a href="index.html" class="beta-link" style="background:transparent;border:1px solid #334155;color:#94a3b8!important;margin-left:10px">← Back to Stable</a>
+    <a href="beta.html" class="beta-link" style="background:transparent;border:1px solid #334155;color:#94a3b8!important;margin-left:10px">Try Beta UI ✨</a>
   </div>
   <button class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
-  <div class="status">BETA VERSION</div>
+  <div class="status">v4.1</div>
 </nav>
 <main>
 <section id="home" class="page active"><div class="hero"><div class="eyebrow">SR University · Timetable Intelligence</div><h1>Your timetable.<br><span>Verified.</span></h1><p>A single professional workspace for Student, Faculty and Room timetables, built around the real SRU public timetable workflows.</p></div><div class="grid"><div class="tile" data-go="student"><div class="icon">🎓</div><h3>Student Timetable</h3><p>Degree → Year → Batch. Every applicable offering stays visible, including complete batch coverage.</p></div><div class="tile" data-go="faculty"><div class="icon">👨‍🏫</div><h3>Faculty Timetable</h3><p>One faculty can teach many subjects. This view filters the official faculty report without assuming a single course identity.</p></div><div class="tile" data-go="rooms"><div class="icon">🏫</div><h3>Room Explorer</h3><p>Inspect the official room report by day and time with subject, faculty and batch information.</p></div><div class="tile" data-go="verify"><div class="icon">🔍</div><h3>Cross Verification</h3><p>Discover your PE/SE offerings by batch, verify the selected subject against Student + Faculty + Room data, and generate its weekly timetable.</p></div><div class="tile" data-go="free"><div class="icon">🟢</div><h3>Free Rooms</h3><p>Jump directly to SRU's official free-room workflow while its request schema remains separate.</p></div><div class="tile"><div class="icon">⚡</div><h3>Source-aware</h3><p>No hardcoded PE2/PE3/PE4 subject identity and no dependency on incomplete E-Batch mappings.</p></div></div></section>
@@ -934,7 +934,9 @@ function refreshDirectorySearches(){
 const $=id=>document.getElementById(id),$$=s=>document.querySelectorAll(s),DAYS=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],TIMES=['08:30','09:30','10:30','11:30','12:30','13:30','14:30','15:30','16:30','17:30','18:30','19:30','20:30'];
 let studentData=null,selectedBatch='',facultyList=[],roomList=[];
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
-async function getJSON(url,opts){const r=await fetch(url,opts);let d;try{d=await r.json()}catch{throw new Error('Server returned a non-JSON response ('+r.status+')')};if(!r.ok||d.success===false&&d.error)throw new Error(d.error||('Request failed ('+r.status+')'));return d}
+const IDB={db:null,init(){return new Promise(r=>{const req=indexedDB.open('SRUTimetable',1);req.onupgradeneeded=e=>e.target.result.createObjectStore('cache');req.onsuccess=e=>{IDB.db=e.target.result;r()};req.onerror=()=>r()})},async get(k){if(!IDB.db)await IDB.init();return new Promise(r=>{if(!IDB.db)return r(null);const req=IDB.db.transaction('cache').objectStore('cache').get(k);req.onsuccess=()=>r(req.result);req.onerror=()=>r(null)})},async set(k,v){if(!IDB.db)await IDB.init();return new Promise(r=>{if(!IDB.db)return r();const req=IDB.db.transaction('cache','readwrite').objectStore('cache').put(v,k);req.onsuccess=()=>r();req.onerror=()=>r()})}};
+window.addEventListener('load',async()=>{if(navigator.onLine){try{const res=await fetch('/api/sru/snapshot');const d=await res.json();if(d.success&&d.data)await IDB.set('snapshot',d.data)}catch(e){}}});
+async function getJSON(url,opts){try{const r=await fetch(url,opts);let d;try{d=await r.json()}catch{throw new Error('Server returned a non-JSON response ('+r.status+')')};if(!r.ok||(d.success===false&&d.error))throw new Error(d.error||('Request failed ('+r.status+')'));return d}catch(e){if(opts&&opts.body){const body=JSON.parse(opts.body);const snap=await IDB.get('snapshot');if(snap){if(url.includes('/student')&&snap.student[body.year]?.[body.batch])return{success:true,data:snap.student[body.year][body.batch].data||snap.student[body.year][body.batch]};if(url.includes('/faculty')&&snap.faculty[body.faculty])return{success:true,data:snap.faculty[body.faculty].data||snap.faculty[body.faculty]};if(url.includes('/room')&&snap.room[body.room])return{success:true,data:snap.room[body.room].data||snap.room[body.room]}}}throw new Error('You are offline and this data is not cached.')}}
 function post(url,body){return getJSON(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})}
 
 function show(page){

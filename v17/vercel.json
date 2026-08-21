@@ -1,1 +1,10 @@
-{"version":2,"outputDirectory":"public"}
+{
+  "version": 2,
+  "outputDirectory": "public",
+  "crons": [
+    {
+      "path": "/api/sru/sync-all",
+      "schedule": "0 2,14 * * *"
+    }
+  ]
+}

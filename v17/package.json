@@ -9,6 +9,7 @@
     "dev": "vercel dev"
   },
   "dependencies": {
+    "@vercel/kv": "^3.0.0",
     "cheerio": "^1.1.2",
     "puppeteer": "^25.8.0"
   }
