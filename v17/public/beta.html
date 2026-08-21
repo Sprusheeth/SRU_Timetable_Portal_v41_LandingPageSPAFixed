@@ -1,0 +1,1563 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SRU Timetable · Student</title><meta name="description" content="SRU student, faculty, room and timetable verification portal"><style>
+:root{--bg:#06080c;--panel:#0d1219;--panel2:#111923;--line:#24303e;--text:#f5f7fb;--muted:#8c99aa;--cyan:#67e8f9;--blue:#60a5fa;--violet:#a78bfa;--green:#34d399;--amber:#fbbf24;--red:#fb7185}*{box-sizing:border-box}html,body{margin:0;background:radial-gradient(1000px 500px at 20% -10%,#122338 0,transparent 60%),var(--bg);color:var(--text);font:14px Inter,system-ui,-apple-system,Segoe UI,sans-serif}body{min-height:100vh}button,select{font:inherit}.nav{height:66px;position:sticky;top:0;z-index:50;background:rgba(6,8,12,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 22px;gap:22px}.brand{font:900 17px ui-monospace,monospace}.brand b{color:var(--cyan)}.links{display:flex;gap:4px;flex:1}.links button{background:transparent;border:0;color:#9aa7b7;padding:9px 11px;border-radius:8px;cursor:pointer}.links button.active,.links button:hover{background:#121a24;color:#fff}.status{font:700 8px ui-monospace,monospace;color:#718095;letter-spacing:.08em}.page{display:none}.page.active{display:block;animation:in .38s ease both}@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.hero{max-width:1220px;margin:auto;padding:94px 24px 55px}.eyebrow{font:800 9px ui-monospace,monospace;color:var(--cyan);letter-spacing:.16em;text-transform:uppercase}.hero h1{font-size:clamp(46px,7vw,86px);line-height:.91;letter-spacing:-.055em;margin:15px 0}.hero h1 span{color:#788596}.hero p{max-width:700px;color:var(--muted);line-height:1.75}.grid{max-width:1220px;margin:auto;padding:0 24px 80px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.tile{border:1px solid var(--line);background:linear-gradient(145deg,#0e151e,#090d13);border-radius:17px;padding:22px;min-height:175px;cursor:pointer;transition:.22s}.tile:hover{transform:translateY(-4px);border-color:#405166}.tile .icon{font-size:23px}.tile h3{margin:15px 0 7px}.tile p{margin:0;color:var(--muted);font-size:11px;line-height:1.6}.wrap{max-width:1500px;margin:auto;padding:25px}.page-title{margin:12px 0 20px}.page-title h2{font-size:30px;letter-spacing:-.03em;margin:6px 0}.page-title p{margin:0;color:var(--muted);font-size:11px;line-height:1.6}.panel{border:1px solid var(--line);background:rgba(13,18,25,.94);border-radius:16px;overflow:hidden;box-shadow:0 20px 80px rgba(0,0,0,.2)}.controls{padding:14px;display:grid;grid-template-columns:repeat(3,1fr) auto;gap:9px;border-bottom:1px solid var(--line)}label{display:block;color:#78879a;font-size:8px;font-weight:800;letter-spacing:.08em;margin:0 0 5px}.field select{width:100%;height:39px;background:#080d13;border:1px solid #2a3746;color:#edf3f8;border-radius:9px;padding:0 10px;outline:0}.field select:focus{border-color:#5d7189}.btn{height:39px;border:1px solid #2a3746;background:#131c27;color:#e9eef5;border-radius:9px;padding:0 15px;cursor:pointer;font-weight:800}.btn.primary{background:linear-gradient(135deg,#1c7384,#51418e);border-color:transparent}.btn:disabled{opacity:.4;cursor:not-allowed}.meta{padding:9px 14px;font-size:9px;color:var(--muted);display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line)}.table-shell{overflow:auto;max-height:calc(100vh - 215px)}table{width:100%;border-collapse:separate;border-spacing:0;min-width:1180px}th{position:sticky;top:0;z-index:4;background:#121b26;border-bottom:1px solid #334151;color:#e5ecf4;font-size:9px;padding:10px 6px}th:first-child{left:0;z-index:6}td{border-right:1px solid #202b38;border-bottom:1px solid #202b38;padding:6px;vertical-align:top;min-width:155px;background:#090e14}td:first-child{position:sticky;left:0;z-index:3;background:#0e151e;color:#aab7c8;width:72px;min-width:72px;text-align:center;font:800 10px ui-monospace,monospace}.class-stack{display:flex;flex-direction:column;gap:6px}.card{border:1px solid #2a3746;border-left:3px solid var(--blue);background:linear-gradient(145deg,#131d28,#0b121a);border-radius:8px;padding:8px}.card.lab{border-left-color:var(--violet)}.subject{font-weight:900;font-size:10px;line-height:1.2}.sub{font-size:8px;color:#a9b5c4;line-height:1.4;margin-top:3px}.batches{display:flex;flex-wrap:wrap;gap:3px;margin-top:5px}.batch{font:800 7px ui-monospace,monospace;border:1px solid #2a3948;border-radius:4px;padding:2px 4px;color:#aebdce}.batch.hit{background:var(--cyan);border-color:var(--cyan);color:#071018}.list{padding:12px;display:grid;gap:8px}.row{border:1px solid var(--line);background:#0a1017;border-radius:10px;padding:12px;display:grid;grid-template-columns:110px 1.4fr 1fr 1fr;gap:10px;align-items:center}.row b{font-size:10px}.row span{font-size:9px;color:var(--muted);line-height:1.4}.empty{padding:55px;text-align:center;color:#667386}.notice{padding:12px;color:#9eabbb;font-size:9px;line-height:1.55;border-top:1px solid var(--line)}.verify-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:12px}.verify-box{border:1px solid var(--line);border-radius:12px;background:#0a1017;padding:14px}.verify-box h4{margin:0 0 10px;font-size:10px}.kv{display:grid;grid-template-columns:90px 1fr;gap:5px;font-size:9px}.kv span{color:var(--muted)}.result{margin:0 12px 12px;padding:12px;border-radius:10px;font-size:10px;font-weight:800}.ok{background:#0b2b22;color:var(--green)}.warn{background:#30260a;color:var(--amber)}.bad{background:#32141b;color:var(--red)}.mini{font:700 8px ui-monospace,monospace;color:#8190a1}.tag{display:inline-block;padding:3px 5px;border-radius:5px;background:#182434;color:#a9c5df;font-size:7px;font-weight:800;margin:2px}.spinner{display:inline-block;width:11px;height:11px;border:2px solid #415066;border-top-color:var(--cyan);border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:5px}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:950px){.grid{grid-template-columns:1fr 1fr}.controls{grid-template-columns:1fr 1fr}.verify-grid{grid-template-columns:1fr}.row{grid-template-columns:1fr 1fr}}@media(max-width:620px){.links button:nth-child(n+4){display:none}.status{display:none}.grid{grid-template-columns:1fr}.controls{grid-template-columns:1fr}.wrap{padding:12px}.hero{padding:65px 18px 45px}}
+
+/* Clean student timetable mode */
+.clean-student{background:#f7f8fa;color:#101318;min-height:calc(100vh - 66px);padding:34px 18px 70px}.clean-wrap{max-width:1180px;margin:0 auto}.clean-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px}.clean-head h2{font-size:31px;letter-spacing:-.04em;margin:7px 0 4px;color:#0b0d10}.clean-head p{margin:0;color:#68707c;font-size:12px}.clean-export{height:38px;background:#fff;border:1px solid #d4d8de;padding:0 15px;border-radius:2px;color:#111;cursor:pointer;font-weight:700;box-shadow:0 1px 2px rgba(0,0,0,.05)}.clean-controls{display:grid;grid-template-columns:1.2fr 1fr 1.3fr auto;gap:14px;align-items:end}.clean-field label{color:#777d86;font-size:9px;letter-spacing:.09em;font-weight:800;margin-bottom:6px}.clean-field select{width:100%;height:38px;border:1px solid #cfd3d8;background:#fff;border-radius:2px;color:#15181c;padding:0 10px;outline:0;font-size:11px}.clean-field select:focus{border-color:#7d8794;box-shadow:0 0 0 2px rgba(40,50,65,.08)}.clean-load{height:38px;border:1px solid #111;background:#111;color:#fff;padding:0 16px;border-radius:2px;font-weight:800;cursor:pointer}.clean-load:disabled{opacity:.4;cursor:not-allowed}.clean-status{display:flex;justify-content:space-between;gap:10px;color:#7a818b;font-size:9px;padding:10px 0 20px}.clean-section-title{font-size:10px;letter-spacing:.09em;color:#727983;font-weight:900;margin:2px 0 9px}.clean-section-title small{font-weight:500;letter-spacing:0;text-transform:none;margin-left:8px}.elective-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:28px}.elective-grid .clean-field select{font-size:10px}.clean-table-wrap{overflow-x:auto;background:#fff;border:1px solid #d3d7dc;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,.05)}.clean-table{width:100%;min-width:900px;border-collapse:separate;border-spacing:3px;padding:7px;background:#fff;table-layout:fixed}.clean-table th{position:static;background:#f0f1f3;color:#20242a;border:0;padding:10px 7px;font-size:9px;font-weight:800;text-align:center;white-space:nowrap}.clean-table th:first-child{background:#111;color:#fff;text-align:left;width:110px}.clean-table td{position:static;min-width:0;background:#fff;border:1px dashed #dfe2e6;padding:0;vertical-align:middle;height:70px}.clean-table td.day{background:#f1f2f4;border:0;padding:0 10px;font-weight:800;font-size:10px;color:#22262b;width:110px;text-align:left}.clean-slot{height:100%;min-height:68px;padding:9px 7px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:#f4f7fb;border:1px solid #d5dce5;border-radius:2px;margin:0}.clean-slot.lab{background:#dcecff;border-color:#bdd4ed}.clean-slot .cs-title{font-size:10px;font-weight:800;line-height:1.2;color:#101820;overflow-wrap:anywhere}.clean-slot .cs-room{margin-top:5px;display:inline-block;background:rgba(255,255,255,.72);padding:3px 7px;border-radius:999px;font-size:8px;color:#555f6b}.clean-slot .cs-meta{font-size:8px;color:#69737f;margin-top:3px;line-height:1.25}.clean-empty{text-align:center!important;padding:40px!important;color:#7a828d!important;border:0!important;background:#fff!important;font-size:11px}.clean-more{margin-top:4px;font-size:8px;color:#626b76}.clean-student .eyebrow{color:#6d747e}.clean-student .spinner{border-color:#d1d5da;border-top-color:#111}@media(max-width:900px){.clean-controls{grid-template-columns:1fr 1fr}.clean-load{width:100%}.elective-grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.clean-student{padding:24px 10px 50px}.clean-head{align-items:flex-start;flex-direction:column}.clean-head h2{font-size:27px}.clean-controls,.elective-grid{grid-template-columns:1fr}.clean-status{flex-direction:column}}
+</style>
+<style>
+:root{--bg:#05070a;--surface:#0a0f16;--surface2:#0e151f;--line:#1d2a39;--line2:#2a3a4c;--text:#f7fafc;--muted:#8c9aad;--cyan:#67e8f9;--blue:#60a5fa;--violet:#a78bfa;--green:#34d399;--amber:#fbbf24;--red:#fb7185;--shadow:0 25px 80px rgba(0,0,0,.32)}
+body{background:radial-gradient(900px 500px at 12% -8%,rgba(67,116,180,.22),transparent 65%),radial-gradient(700px 450px at 92% 5%,rgba(121,79,185,.13),transparent 60%),var(--bg)}
+.nav{height:68px;background:rgba(5,7,10,.82);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);padding:0 clamp(14px,3vw,34px)}
+.links{scrollbar-width:none}.links::-webkit-scrollbar{display:none}
+.links button{padding:10px 12px;border-radius:10px;transition:.2s}
+.links button:hover,.links button.active{background:#111a25;color:#fff}
+.hero{max-width:1320px;padding:clamp(70px,10vw,125px) 24px 55px}
+.hero h1{font-size:clamp(48px,7.5vw,94px);line-height:.9;letter-spacing:-.065em}
+.hero p{max-width:730px;font-size:14px;line-height:1.8}
+.grid{max-width:1320px;gap:14px;padding:0 24px 90px}
+.tile{border-radius:18px;padding:22px;min-height:180px;box-shadow:0 12px 45px rgba(0,0,0,.12)}
+.tile:hover{transform:translateY(-4px);border-color:#3a4d62;box-shadow:var(--shadow)}
+.wrap{max-width:1560px;padding:28px clamp(14px,2.5vw,32px) 70px}
+.page-title h2{font-size:32px}
+.panel{border-radius:18px;box-shadow:var(--shadow)}
+.controls{padding:15px;gap:10px;background:rgba(255,255,255,.012)}
+.field select,.btn{height:42px;border-radius:10px}
+.field select{background:#070c12;border-color:#263548}
+.btn.primary{background:linear-gradient(135deg,#176c7d,#4d3d88)}
+.table-shell{scrollbar-color:#314255 #080d13}
+table{table-layout:fixed;min-width:0}
+th{background:#101923}
+td{background:#080d13}
+.card{border-radius:9px;padding:8px}
+.subject{font-size:10px}
+.sub{font-size:8px}
+@media(max-width:1100px){.grid{grid-template-columns:1fr 1fr}.controls{grid-template-columns:1fr 1fr}.verify-grid{grid-template-columns:1fr}}
+@media(max-width:760px){
+ .status{display:none}.grid{grid-template-columns:1fr}.wrap{padding:18px 10px 55px}.hero{padding:70px 18px 45px}
+ .controls{grid-template-columns:1fr}.controls .field[style]{grid-column:auto!important}
+}
+</style>
+
+<style>
+.degree-count{font-size:8px;color:#718096;margin-top:5px}
+#sDegree{min-width:0}
+</style>
+<style>
+#fBody .card{min-height:74px}
+#fBody .subject{font-size:10px}
+#fBody .sub{font-size:8px}
+#fBody .batches{max-height:72px;overflow:auto}
+</style>
+<style>@media print{body{background:#fff!important}.nav,.page-title,.clean-head .clean-export,.clean-controls,.clean-status,.clean-section-title{display:none!important}.clean-student{padding:0!important;background:#fff!important}.clean-wrap{max-width:none!important}.elective-grid{display:grid!important;grid-template-columns:repeat(4,1fr)!important;margin:0 0 12px!important}.clean-table-wrap{box-shadow:none!important;border:1px solid #aaa!important}.clean-table{min-width:0!important;font-size:8px!important}.clean-table th{font-size:7px!important;padding:5px!important}.clean-table td{height:55px!important}.clean-slot{min-height:53px!important;padding:4px!important}.clean-slot .cs-title{font-size:7px!important}.clean-slot .cs-room,.clean-slot .cs-meta{font-size:6px!important}.clean-table td.day{font-size:7px!important;width:65px!important}.eyebrow{color:#777!important}}</style>
+<style id="v25-student-ui">
+.clean-wrap{max-width:1560px}
+.clean-head{margin-bottom:22px}
+.clean-export-group{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.clean-export{height:36px;padding:0 12px;font-size:10px}
+.clean-table-wrap{width:100%;overflow-x:auto}
+.clean-table{min-width:1180px;padding:5px;border-spacing:2px}
+.clean-table th{padding:8px 5px;font-size:8px}
+.clean-table th:first-child{width:92px}
+.clean-table td{height:62px}
+.clean-table td.day{width:92px;padding:0 8px;font-size:9px}
+.clean-slot{min-height:60px;padding:5px 5px;justify-content:center}
+.clean-slot .cs-title{font-size:9px;line-height:1.08;display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;max-width:100%}
+.clean-slot .cs-room{margin-top:3px;padding:2px 5px;font-size:7px;white-space:nowrap}
+.clean-slot .cs-meta{font-size:7px;line-height:1.15;margin-top:2px;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.clean-slot .cs-batches{margin-top:3px;width:100%;max-height:23px;overflow-y:auto;overflow-x:hidden;font-size:6.5px;line-height:1.25;color:#5f6975;text-align:center;word-break:break-word}
+.clean-slot .cs-batches b{font-weight:800;color:#404954}
+.clean-student .clean-status{padding-bottom:14px}
+@media(max-width:900px){
+  .clean-wrap{max-width:100%}
+  .clean-head{align-items:flex-start;flex-direction:column}
+  .clean-export-group{width:100%}
+  .clean-export{flex:1}
+}
+@media print{
+  @page{size:A4 landscape;margin:7mm}
+  body{background:#fff!important}
+  body>*{display:none!important}
+  main{display:block!important}
+  .page{display:none!important}
+  .page.active{display:block!important}
+  .clean-student{padding:0!important;background:#fff!important;min-height:0!important}
+  .clean-head{margin:0 0 8px!important}
+  .clean-head h2{font-size:20px!important}
+  .clean-head p,.clean-export-group,.clean-controls,.clean-status,.clean-section-title,.elective-grid{display:none!important}
+  .clean-table-wrap{border:0!important;box-shadow:none!important;overflow:visible!important}
+  .clean-table{width:100%!important;min-width:0!important;padding:2px!important;border-spacing:1px!important}
+  .clean-table th{font-size:7px!important;padding:4px!important}
+  .clean-table td{height:55px!important}
+  .clean-slot{min-height:52px!important;padding:3px!important}
+  .clean-slot .cs-title{font-size:7px!important}
+  .clean-slot .cs-room,.clean-slot .cs-meta,.clean-slot .cs-batches{font-size:5.5px!important}
+}
+</style>
+
+<style id="v27-accuracy-compact">
+#student .clean-wrap{max-width:1560px}
+#student .clean-table{min-width:0;width:100%;table-layout:fixed;border-spacing:2px;padding:5px}
+#student .clean-table th{padding:7px 4px;font-size:8px}
+#student .clean-table th:first-child{width:92px}
+#student .clean-table td{height:72px;vertical-align:middle}
+#student .clean-table td.day{width:92px;padding:0 7px;font-size:9px}
+#student .clean-table td.session-cell{padding:2px;background:#fff}
+#student .clean-slot{min-height:62px;height:auto;padding:5px;overflow:hidden;box-sizing:border-box;justify-content:center}
+#student .clean-slot .cs-title{font-size:8.5px;line-height:1.1;max-width:100%;display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+#student .clean-slot .cs-room{font-size:7px;padding:2px 5px;margin-top:3px;white-space:nowrap}
+#student .clean-slot .cs-meta{font-size:6.8px;line-height:1.1;margin-top:2px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#student .cs-batch-details{width:100%;margin-top:3px;font-size:6.3px;color:#56616d;text-align:center}
+#student .cs-batch-details summary{cursor:pointer;list-style:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#student .cs-batch-details summary::-webkit-details-marker{display:none}
+#student .cs-batch-details summary:before{content:'▸ ';font-size:6px}
+#student .cs-batch-details[open] summary:before{content:'▾ '}
+#student .cs-batch-list{margin-top:2px;padding:3px;background:rgba(255,255,255,.72);border:1px solid #d8dee5;border-radius:3px;line-height:1.25;max-height:60px;overflow:auto;word-break:break-word}
+#student .clean-slot.lab{background:#dcecff;border-color:#bdd4ed}
+#student .clean-slot:not(.lab){background:#f4f7fb;border-color:#d5dce5}
+#faculty .wrap,#rooms .wrap,#verify .wrap,#free .wrap{max-width:1560px}
+#faculty table,#rooms table,#verify table{min-width:0;width:100%;table-layout:fixed;border-spacing:2px;padding:5px}
+#faculty th,#rooms th,#verify th{padding:7px 4px;font-size:8px}
+#faculty th:first-child,#rooms th:first-child,#verify th:first-child{width:92px}
+#faculty td,#rooms td,#verify td{height:72px;vertical-align:middle}
+#faculty td:first-child,#rooms td:first-child,#verify td:first-child{width:92px;min-width:92px}
+#faculty .class-stack,#rooms .class-stack,#verify .class-stack{max-height:66px;overflow:auto;padding:2px;gap:2px}
+#faculty .card,#rooms .card,#verify .card{min-height:58px;padding:5px}
+#faculty .subject,#rooms .subject,#verify .subject{font-size:8.5px;line-height:1.1}
+#faculty .sub,#rooms .sub,#verify .sub{font-size:6.8px}
+#faculty .batches,#rooms .batches,#verify .batches{font-size:6.2px}
+.tt-legend{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:8px 3px;color:#707984;font-size:8px}
+</style>
+<style id="v26-consistent-ui">
+/* Shared light workspace for Faculty / Rooms / Verify / Free Rooms */
+#faculty,#rooms,#verify,#free{background:#f5f6f8;color:#12161b;min-height:calc(100vh - 68px)}
+#faculty .wrap,#rooms .wrap,#verify .wrap,#free .wrap{max-width:1560px;padding:30px clamp(16px,2.8vw,42px) 70px}
+#faculty .page-title,#rooms .page-title,#verify .page-title,#free .page-title{margin:4px 0 18px}
+#faculty .page-title .eyebrow,#rooms .page-title .eyebrow,#verify .page-title .eyebrow,#free .page-title .eyebrow{color:#69717c}
+#faculty .page-title h2,#rooms .page-title h2,#verify .page-title h2,#free .page-title h2{font-size:32px;color:#101418;margin:6px 0}
+#faculty .page-title p,#rooms .page-title p,#verify .page-title p,#free .page-title p{color:#69727d}
+#faculty .panel,#rooms .panel,#verify .panel,#free .panel{background:#fff;border:1px solid #d7dbe0;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+#faculty .controls,#rooms .controls,#verify .controls{background:#fff;border-bottom:1px solid #e1e4e8;padding:14px}
+#faculty label,#rooms label,#verify label{color:#69717a}
+#faculty .field select,#rooms .field select,#verify .field select{height:40px;background:#fff;color:#171b20;border:1px solid #cdd2d8;border-radius:3px}
+#faculty .btn,#rooms .btn,#verify .btn{height:40px;border-radius:3px}
+#faculty .btn.primary,#rooms .btn.primary,#verify .btn.primary{background:#111;color:#fff;border-color:#111}
+#faculty .meta,#rooms .meta,#verify .meta{padding:9px 14px;color:#707984;font-size:9px;background:#fff}
+#faculty .clean-table-wrap,#rooms .clean-table-wrap,#verify .clean-table-wrap{max-height:calc(100vh - 245px);overflow:auto;background:#fff}
+#faculty table,#rooms table,#verify table{min-width:1220px;width:100%;border-collapse:separate;border-spacing:2px;padding:6px;background:#fff;table-layout:fixed}
+#faculty th,#rooms th,#verify th{position:sticky;top:0;z-index:5;background:#eef0f2;color:#20252a;border:0;padding:8px 5px;font-size:8px;text-align:center;white-space:nowrap}
+#faculty th:first-child,#rooms th:first-child,#verify th:first-child{left:0;z-index:7;background:#111;color:#fff;text-align:left;width:88px}
+#faculty td,#rooms td,#verify td{height:58px;min-width:145px;padding:0;background:#fff;border:1px dashed #dfe2e6;vertical-align:middle}
+#faculty td:first-child,#rooms td:first-child,#verify td:first-child{position:sticky;left:0;z-index:4;background:#f0f1f3;color:#24292f;width:88px;min-width:88px;text-align:center;font:800 9px ui-monospace,monospace}
+#faculty .class-stack,#rooms .class-stack,#verify .class-stack{display:flex;flex-direction:column;gap:3px;max-height:58px;overflow:auto;padding:2px}
+#faculty .card,#rooms .card,#verify .card{background:#f4f7fb;border:1px solid #d6dde5;border-left:2px solid #9aa8b7;border-radius:2px;padding:5px;min-height:48px;overflow:hidden;color:#111820}
+#faculty .card.lab,#rooms .card.lab,#verify .card.lab{background:#dcecff;border-color:#bdd4ed;border-left-color:#4d91d9}
+#faculty .subject,#rooms .subject,#verify .subject{font-size:8.5px;line-height:1.1;font-weight:900;display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#faculty .sub,#rooms .sub,#verify .sub{font-size:7px;color:#5f6974;line-height:1.15;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#faculty .batches,#rooms .batches,#verify .batches{display:block;margin-top:2px;font-size:6.5px;line-height:1.15;color:#68737f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#faculty .batch,#rooms .batch,#verify .batch{display:inline-block;font-size:6px;border:0;background:#e9edf1;color:#4e5862;border-radius:3px;padding:1px 3px;margin:1px}
+#faculty .notice,#rooms .notice,#verify .notice{background:#fff;color:#707984;border-top:1px solid #e2e5e8;padding:10px 14px;font-size:8px}
+#verify .list{padding:10px;background:#fff}
+#verify .row{border:1px solid #dfe3e7;background:#fafbfc;border-radius:4px;color:#1d2329}
+#verify .row span{color:#66717c}
+#verify .verify-grid{padding:10px;background:#fff}
+#verify .verify-box{border:1px solid #dfe3e7;background:#fafbfc;border-radius:4px;color:#1c2228}
+#verify .verify-box h4{color:#171b20}
+#verify .kv{color:#252b31}
+#verify .kv span{color:#6c7580}
+#verify .result{border-radius:4px}
+#free .list{padding:14px;background:#fff}
+#free .row{border:1px solid #dfe3e7;background:#fafbfc;border-radius:4px;color:#171b20}
+#free .row span{color:#68727d}
+#free .btn.primary{background:#111;color:#fff;border-color:#111;border-radius:3px}
+#free .empty{color:#6f7882}
+#free .notice{color:#6f7882;background:#fff}
+
+/* Student: friend-like width, compact height, no text collisions */
+#student .clean-table-wrap{width:100%;overflow-x:auto}
+#student .clean-table{min-width:1180px;width:100%;border-spacing:2px;padding:5px;table-layout:fixed}
+#student .clean-table th{padding:7px 4px;font-size:8px}
+#student .clean-table th:first-child{width:88px}
+#student .clean-table td{height:54px}
+#student .clean-table td.day{width:88px;font-size:9px;padding:0 7px}
+#student .clean-slot{min-height:50px;height:100%;padding:5px 5px;overflow:hidden}
+#student .clean-slot .cs-title{font-size:8.5px;line-height:1.08;max-width:100%;display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+#student .clean-slot .cs-room{font-size:7px;padding:2px 5px;margin-top:3px;white-space:nowrap}
+#student .clean-slot .cs-meta{font-size:6.8px;line-height:1.1;margin-top:2px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#student .clean-slot .cs-batches{font-size:6.2px;line-height:1.1;margin-top:2px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#5f6974}
+#student .clean-slot .cs-batches b{font-weight:900}
+#student .clean-slot .cs-more{font-weight:800;color:#4c5966}
+.tt-legend{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:8px 4px;color:#707984;font-size:8px}
+.tt-legend i{display:inline-block;width:10px;height:7px;border:1px solid #d5dce5;vertical-align:middle;margin-right:4px}
+.tt-legend .legend-lecture{background:#f4f7fb}
+.tt-legend .legend-lab{background:#dcecff;border-color:#bdd4ed}
+@media(max-width:900px){
+ #faculty .clean-table-wrap,#rooms .clean-table-wrap,#verify .clean-table-wrap{max-height:calc(100vh - 285px)}
+}
+</style>
+
+<style id="v29-search-ui">
+.smart-select{position:relative;width:100%}
+.smart-select-control{
+  width:100%;height:40px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 12px;background:#fff;border:1px solid #cdd2d8;border-radius:4px;
+  color:#171b20;font-size:13px;cursor:pointer;box-sizing:border-box
+}
+.smart-select-control .smart-arrow{font-size:12px;color:#6b7480}
+.smart-select.open .smart-select-control{border-color:#8ca4bd;box-shadow:0 0 0 3px rgba(74,115,153,.08)}
+.smart-select-menu{
+  display:none;position:absolute;z-index:2000;left:0;right:0;top:44px;
+  background:#fff;border:1px solid #cfd5dc;border-radius:6px;
+  box-shadow:0 14px 32px rgba(16,24,40,.18);padding:8px
+}
+.smart-select.open .smart-select-menu{display:block}
+.smart-select-search{
+  width:100%;height:34px;border:1px solid #d5dbe1;border-radius:4px;
+  padding:0 9px;box-sizing:border-box;font-size:12px;color:#171b20;
+  outline:none;margin-bottom:7px
+}
+.smart-select-search:focus{border-color:#8ca4bd}
+.smart-select-options{max-height:280px;overflow:auto}
+.smart-option{
+  padding:8px 9px;border-radius:4px;font-size:12px;color:#20262d;
+  cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+.smart-option:hover,.smart-option.selected{background:#eef2f5}
+.smart-empty{padding:10px;color:#7b8490;font-size:11px}
+.native-directory-select{position:absolute!important;width:1px!important;height:1px!important;
+  opacity:0!important;pointer-events:none!important;overflow:hidden!important}
+#faculty .controls,#rooms .controls,#verify .controls,#free .panel{
+  position:relative;z-index:20
+}
+#faculty .clean-table-wrap,#rooms .clean-table-wrap,#verify .clean-table-wrap{
+  position:relative;z-index:1
+}
+</style>
+
+
+<style id="v29-page-polish">
+#faculty,#rooms,#verify,#free{background:#f5f6f8;color:#12161b;min-height:calc(100vh - 68px)}
+#faculty .wrap,#rooms .wrap,#verify .wrap,#free .wrap{max-width:1560px;padding:30px clamp(16px,2.8vw,42px) 70px}
+#faculty .page-title,#rooms .page-title,#verify .page-title,#free .page-title{margin:4px 0 18px}
+#faculty .page-title .eyebrow,#rooms .page-title .eyebrow,#verify .page-title .eyebrow,#free .page-title .eyebrow{color:#69717c}
+#faculty .page-title h2,#rooms .page-title h2,#verify .page-title h2,#free .page-title h2{font-size:32px;color:#101418;margin:6px 0}
+#faculty .page-title p,#rooms .page-title p,#verify .page-title p,#free .page-title p{color:#69727d}
+#faculty .panel,#rooms .panel,#verify .panel,#free .panel{background:#fff;border:1px solid #d7dbe0;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+#faculty .controls,#rooms .controls,#verify .controls{background:#fff;border-bottom:1px solid #e1e4e8;padding:14px}
+#faculty label,#rooms label,#verify label{color:#69717a}
+#faculty .field select,#rooms .field select,#verify .field select{height:40px;background:#fff;color:#171b20;border:1px solid #cdd2d8;border-radius:4px}
+#faculty .btn,#rooms .btn,#verify .btn{height:40px;border-radius:4px}
+#faculty .btn.primary,#rooms .btn.primary,#verify .btn.primary{background:#111;color:#fff;border-color:#111}
+#faculty .meta,#rooms .meta,#verify .meta{padding:9px 14px;color:#707984;font-size:9px;background:#fff}
+#faculty .clean-table-wrap,#rooms .clean-table-wrap,#verify .clean-table-wrap{max-height:calc(100vh - 245px);overflow:auto;background:#fff}
+#faculty table,#rooms table,#verify table{min-width:1220px;width:100%;border-collapse:separate;border-spacing:2px;padding:6px;background:#fff;table-layout:fixed}
+#faculty th,#rooms th,#verify th{position:sticky;top:0;z-index:5;background:#eef0f2;color:#20252a;border:0;padding:8px 5px;font-size:8px;text-align:center;white-space:nowrap}
+#faculty th:first-child,#rooms th:first-child,#verify th:first-child{left:0;z-index:7;background:#111;color:#fff;text-align:left;width:88px}
+#faculty td,#rooms td,#verify td{height:58px;min-width:145px;padding:0;background:#fff;border:1px dashed #dfe2e6;vertical-align:middle}
+#faculty td:first-child,#rooms td:first-child,#verify td:first-child{position:sticky;left:0;z-index:4;background:#f0f1f3;color:#24292f;width:88px;min-width:88px;text-align:center;font:800 9px ui-monospace,monospace}
+#faculty .class-stack,#rooms .class-stack,#verify .class-stack{display:flex;flex-direction:column;gap:3px;max-height:58px;overflow:auto;padding:2px}
+#faculty .card,#rooms .card,#verify .card{background:#f4f7fb;border:1px solid #d6dde5;border-left:2px solid #9aa8b7;border-radius:3px;padding:5px;min-height:48px;overflow:hidden;color:#111820}
+#faculty .card.lab,#rooms .card.lab,#verify .card.lab{background:#dcecff;border-color:#bdd4ed;border-left-color:#4d91d9}
+#faculty .subject,#rooms .subject,#verify .subject{font-size:8.5px;line-height:1.1;font-weight:900;display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#faculty .sub,#rooms .sub,#verify .sub{font-size:7px;color:#5f6974;line-height:1.15;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#faculty .batches,#rooms .batches,#verify .batches{display:block;margin-top:2px;font-size:6.5px;line-height:1.15;color:#68737f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#faculty .batch,#rooms .batch,#verify .batch{display:inline-block;font-size:6px;border:0;background:#e9edf1;color:#4e5862;border-radius:3px;padding:1px 3px;margin:1px}
+#faculty .notice,#rooms .notice,#verify .notice{background:#fff;color:#707984;border-top:1px solid #e2e5e8;padding:10px 14px;font-size:8px}
+#verify .list,#verify .verify-grid{padding:10px;background:#fff}
+#verify .row,#verify .verify-box{border:1px solid #dfe3e7;background:#fafbfc;border-radius:5px;color:#1d2329}
+#verify .row span,#verify .kv span{color:#66717c}
+#free .list{padding:14px;background:#fff}
+#free .row{border:1px solid #dfe3e7;background:#fafbfc;border-radius:5px;color:#171b20}
+#free .row span{color:#68727d}
+#free .btn.primary{background:#111;color:#fff;border-color:#111;border-radius:4px}
+#free .notice{color:#6f7882;background:#fff}
+</style>
+
+
+<style id="v30-faculty-refinement">
+/* Faculty: make the timetable a true page-level workspace, not a nested
+   scroll box. This keeps the time column visible and lets the browser page
+   scroll naturally when a day contains several sessions. */
+#faculty .wrap{max-width:1580px;padding:26px clamp(18px,2.5vw,40px) 55px}
+#faculty .page-title{margin:0 0 14px}
+#faculty .page-title h2{font-size:30px;letter-spacing:-.025em}
+#faculty .page-title p{font-size:12px;max-width:900px}
+#faculty .panel{overflow:visible}
+#faculty .controls{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;
+  align-items:end;padding:13px 14px
+}
+#faculty .controls .field{min-width:0!important;grid-column:auto!important}
+#faculty .controls .smart-select{min-width:0}
+#faculty .controls .btn{min-width:150px}
+#faculty .meta{
+  min-height:34px;display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:8px 14px;border-bottom:1px solid #e4e7ea
+}
+#faculty .clean-table-wrap{
+  max-height:none!important;
+  background:#fff
+}
+#faculty table{
+  width:100%!important;table-layout:fixed;
+  border-collapse:separate;border-spacing:2px;padding:5px;background:#fff
+}
+#faculty table th{
+  position:sticky;top:0;z-index:10;height:31px;padding:5px 4px;
+  font-size:8px;background:#eef1f3;color:#1e252c;border:0
+}
+#faculty table th:first-child{
+  left:0;z-index:12;width:72px;min-width:72px;background:#111;color:#fff
+}
+#faculty table td{
+  height:68px;min-width:0!important;width:auto;padding:0;
+  background:#fff;border:1px dashed #d9dee3;vertical-align:top
+}
+#faculty table td:first-child{
+  position:sticky;left:0;z-index:8;width:72px;min-width:72px;
+  background:#f0f1f3;color:#252b31;text-align:center;
+  font:800 8px ui-monospace,monospace;padding-top:12px
+}
+#faculty .class-stack{
+  display:flex;flex-direction:column;gap:3px;
+  max-height:none!important;overflow:visible!important;padding:3px
+}
+#faculty .card{
+  min-height:62px;height:auto;box-sizing:border-box;
+  padding:6px 7px;background:#f3f6fa;border:1px solid #d4dce5;
+  border-left:3px solid #9aabbc;border-radius:4px;overflow:visible;
+  display:flex;flex-direction:column;justify-content:center
+}
+#faculty .card.lab{
+  background:#dcebfb;border-color:#c1d7ee;border-left-color:#4a91d2
+}
+#faculty .subject{
+  font-size:8.5px;line-height:1.12;font-weight:900;
+  display:block;white-space:normal;overflow-wrap:anywhere;
+  margin-bottom:3px
+}
+#faculty .sub{
+  font-size:7px;line-height:1.2;margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+}
+#faculty .sub .tag{
+  display:inline-block;background:#15263a;color:#fff;border-radius:3px;
+  padding:2px 5px;font-size:6px;font-weight:800;margin-right:3px
+}
+#faculty .batches{
+  margin-top:4px!important;font-size:6.5px!important;line-height:1.3!important;
+  color:#596673!important;white-space:normal!important;
+  overflow:visible!important;text-overflow:clip!important;
+  overflow-wrap:anywhere
+}
+#faculty .batches:before{content:"Batches: ";font-weight:800;color:#424d58}
+#faculty .batch{
+  display:inline!important;padding:0!important;margin:0!important;
+  border:0!important;background:none!important;color:#596673!important;
+  font-size:6.5px!important
+}
+#faculty .batch:not(:last-child):after{content:", "}
+#faculty .notice{
+  padding:9px 14px;font-size:8px;color:#707984;
+  border-top:1px solid #e2e5e8;background:#fff
+}
+@media(max-width:1000px){
+  #faculty .controls{grid-template-columns:1fr}
+  #faculty .controls .btn{width:100%}
+  #faculty table th{top:60px}
+  #faculty table th:first-child,#faculty table td:first-child{width:60px;min-width:60px}
+  #faculty .subject{font-size:8px}
+}
+</style>
+
+<style id="v31-verify-ui">
+.verify-controls{grid-template-columns:1.05fr 1fr 1.7fr auto!important}
+.verify-flow{padding:12px;display:grid;gap:7px;background:#fff;border-bottom:1px solid #e2e5e8}
+.verify-flow .verify-category{display:grid;grid-template-columns:70px 1fr 1fr auto;gap:10px;align-items:center;border:1px solid #dfe3e7;border-radius:6px;background:#fafbfc;padding:9px 11px}
+.verify-flow .verify-category b{font-size:10px;color:#171b20}
+.verify-flow .verify-category span{font-size:9px;color:#68727d}
+.verify-flow .verify-category .count{font-size:8px;font-weight:800;color:#49545f}
+.verify-result-empty{margin:12px;border:1px dashed #cfd5dc;border-radius:6px;padding:22px;text-align:center;color:#7a838d;font-size:10px;background:#fafbfc}
+.verify-result-banner{margin:12px 12px 0;border:1px solid #d8dde2;border-radius:6px;background:#f8fafb;padding:11px 13px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.verify-result-banner .stat{display:flex;flex-direction:column;gap:3px}.verify-result-banner .stat span{font-size:8px;color:#717b86;text-transform:uppercase;letter-spacing:.08em;font-weight:800}.verify-result-banner .stat b{font-size:11px;color:#14191e}
+.verify-table-shell{margin-top:12px;max-height:none!important;overflow-x:auto!important;overflow-y:visible!important}
+#verify table{min-width:1180px!important;table-layout:fixed!important}
+#verify td{height:auto!important;min-height:62px!important;vertical-align:top!important;padding:3px!important}
+#verify .class-stack{max-height:none!important;overflow:visible!important;gap:4px!important}
+#verify .card{min-height:56px!important;height:auto!important;overflow:visible!important}
+#verify .subject{-webkit-line-clamp:3;line-clamp:3;line-clamp:3!important;white-space:normal!important}
+#verify .sub{white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
+#verify .batches{white-space:normal!important;overflow:visible!important}
+#verify .verify-match{border-left-color:#16805b!important;background:#edf9f4!important}
+#verify .verify-mismatch{border-left-color:#c77b19!important;background:#fff8ea!important}
+#verify .verify-missing{border-left-color:#bd3348!important;background:#fff0f2!important}
+#verify .verify-box{padding:12px!important}.verify-box .status-pill{display:inline-block;padding:3px 6px;border-radius:4px;font-size:7px;font-weight:900;margin-bottom:6px}.status-pill.match{background:#d9f4e8;color:#116342}.status-pill.mismatch{background:#ffedc7;color:#85510a}.status-pill.missing{background:#ffdce2;color:#8d2638}
+@media(max-width:1000px){.verify-controls{grid-template-columns:1fr 1fr!important}.verify-result-banner{grid-template-columns:1fr 1fr}}
+</style>
+<style id="v31-verify-pair">
+.verify-pair{display:grid;grid-template-columns:1fr 48px 1fr;gap:4px;align-items:stretch;margin-bottom:5px}.verify-side{min-width:0}.verify-connector{display:flex;align-items:center;justify-content:center;font:900 6px ui-monospace,monospace;color:#6b7480;writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.08em}.verify-pair .card{height:100%}
+@media(max-width:900px){.verify-pair{grid-template-columns:1fr}.verify-connector{writing-mode:horizontal-tb;transform:none;padding:2px}}
+</style>
+<style id="v32-verify-ui">
+.verify-controls{grid-template-columns:1.05fr 1.15fr 1.7fr auto!important}
+#vChoices .verify-category:first-child{border-color:#c7d7e7;background:#f7fafc}
+@media(max-width:1000px){.verify-controls{grid-template-columns:1fr 1fr!important}}
+</style>
+
+<style id="v33-refinement">
+.verify-page .hero h1{letter-spacing:-.04em}
+.verify-page .hero p{max-width:920px}
+.verify-controls{
+  grid-template-columns:minmax(210px,1fr) minmax(250px,1.2fr) minmax(300px,1.55fr) auto!important;
+  align-items:end!important;
+  gap:12px!important;
+}
+.verify-controls .field label{margin-bottom:7px}
+.verify-controls select{height:52px}
+.verify-controls .btn{height:52px;white-space:nowrap}
+#vChoices{display:grid;grid-template-columns:1fr;gap:8px}
+.verify-category{
+  min-height:52px!important;
+  display:grid!important;
+  grid-template-columns:100px 1fr 1.5fr auto!important;
+  align-items:center;
+  gap:14px;
+}
+.verify-category b{font-weight:800}
+.verify-category .count{font-weight:700}
+.verify-result-banner{
+  display:grid!important;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  padding:12px!important;
+}
+.verify-result-banner .stat{
+  background:#fff;
+  border:1px solid #dbe3ea;
+  border-radius:10px;
+  padding:12px 14px;
+}
+.verify-result-banner .stat span{
+  display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#657386;
+}
+.verify-result-banner .stat b{display:block;font-size:22px;margin-top:4px}
+.verify-pair{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 58px minmax(0,1fr);
+  gap:5px;
+  align-items:stretch;
+}
+.verify-side{min-width:0}
+.verify-side .mini{
+  font-size:9px;font-weight:800;letter-spacing:.08em;
+  color:#657386;margin:3px 0 4px;
+}
+.verify-connector{
+  display:flex;align-items:center;justify-content:center;
+  writing-mode:vertical-rl;
+  font-size:8px;font-weight:900;letter-spacing:.08em;
+}
+.verify-pair .card{
+  min-height:88px;
+  height:auto!important;
+  overflow:hidden;
+  word-break:normal!important;
+  overflow-wrap:anywhere;
+}
+.verify-pair .card .subject{
+  font-size:12px!important;
+  line-height:1.15!important;
+  white-space:normal!important;
+  overflow:visible!important;
+}
+.verify-pair .card .sub{
+  white-space:normal!important;
+  overflow:visible!important;
+}
+.verify-pair .batches{
+  max-height:48px;
+  overflow:auto;
+  white-space:normal!important;
+}
+.status-pill{font-size:9px!important;font-weight:900}
+@media(max-width:1100px){
+  .verify-controls{grid-template-columns:1fr 1fr!important}
+  .verify-controls .btn{grid-column:1/-1}
+  .verify-result-banner{grid-template-columns:repeat(2,1fr)}
+  .verify-category{grid-template-columns:80px 1fr!important}
+}
+@media(max-width:700px){
+  .verify-result-banner{grid-template-columns:1fr}
+  .verify-pair{grid-template-columns:1fr}
+  .verify-connector{writing-mode:horizontal-tb;min-height:22px}
+}
+</style>
+
+
+<style id="v34-ui">
+/* v34: readable verification workspace */
+#verify .wrap{max-width:1500px}
+#verify .page-title{margin-bottom:20px}
+#verify .page-title h2{font-size:clamp(34px,3.2vw,54px);line-height:1.02}
+#verify .page-title p{font-size:14px;line-height:1.6;max-width:1050px}
+#verify .panel{border-radius:18px;overflow:hidden}
+#verify .verify-controls{padding:18px 18px 16px}
+#verify .verify-controls .field{min-width:0}
+#verify .verify-controls select{font-size:14px}
+#verify .verify-flow{padding:12px 18px!important}
+#verify .verify-category{
+  min-height:58px!important;
+  padding:10px 14px!important;
+  border-radius:12px!important;
+  grid-template-columns:90px 1fr 1.4fr auto!important;
+}
+#verify .verify-result-banner{
+  margin:14px 18px!important;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  border:1px solid #dbe3ea;
+  border-radius:12px;
+  background:#f7f9fb;
+}
+#verify .verify-result-banner .stat{min-width:0}
+#verify .verify-result-banner .stat b{font-size:24px}
+#verify .verify-table-shell{
+  margin:0 18px 18px!important;
+  overflow:auto!important;
+  max-height:calc(100vh - 390px);
+  min-height:430px;
+}
+#verify .verify-table-shell table{
+  min-width:1180px;
+  table-layout:fixed;
+}
+#verify .verify-table-shell th:first-child,
+#verify .verify-table-shell td:first-child{width:86px}
+#verify .verify-table-shell th:not(:first-child),
+#verify .verify-table-shell td:not(:first-child){width:156px}
+#verify .verify-table-shell td{vertical-align:top;padding:7px}
+#verify .verify-pair{
+  grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);
+  gap:4px;
+}
+#verify .verify-pair .card{
+  padding:8px!important;
+  border-radius:8px!important;
+  min-height:96px;
+}
+#verify .verify-pair .card .subject{
+  font-size:12px!important;
+  line-height:1.2!important;
+  font-weight:800!important;
+}
+#verify .verify-pair .card .sub{
+  font-size:10px!important;
+  line-height:1.25!important;
+}
+#verify .verify-pair .batches{
+  font-size:9px!important;
+  max-height:44px;
+}
+#verify .verify-connector{
+  font-size:7px!important;
+  color:#7b8794;
+}
+#verify .verify-grid{
+  padding:0 18px 18px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+#verify .verify-box{
+  border:1px solid #dbe3ea;
+  border-radius:12px;
+  padding:13px;
+  background:#fff;
+}
+#verify .verify-box h4{margin:7px 0 10px}
+#verify .notice{margin:0 18px 18px}
+@media(max-width:1100px){
+  #verify .verify-controls{grid-template-columns:1fr 1fr!important}
+  #verify .verify-controls .btn{grid-column:1/-1}
+  #verify .verify-grid{grid-template-columns:1fr}
+  #verify .verify-table-shell{min-height:360px}
+}
+</style>
+
+
+<style id="v35-compact-verify">
+/* Student elective controls are filters, not required choices. */
+.student-electives .field select,
+#sPE2,#sPE3,#sPE4,#sSE2{background:#fff}
+
+/* Verify is intentionally NOT a second timetable. */
+#verify .verify-table-shell{
+  max-height:none!important;
+  min-height:0!important;
+  overflow:visible!important;
+  margin:0 18px 18px!important;
+}
+#verify .verify-table-shell table{
+  min-width:0!important;
+  width:100%!important;
+  table-layout:auto!important;
+}
+#verify .verify-table-shell th,
+#verify .verify-table-shell td{
+  width:auto!important;
+  padding:12px 14px!important;
+  vertical-align:middle!important;
+}
+#verify .verify-table-shell th:first-child{width:90px!important}
+#verify .verify-table-shell th:nth-child(2){width:100px!important}
+#verify .match-subject{
+  font-weight:800;
+  line-height:1.25;
+  margin-bottom:5px;
+}
+#verify .match-batches{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px;
+}
+#verify .match-batches .batch{
+  display:inline-block;
+  padding:3px 6px;
+  border:1px solid #d4dde6;
+  border-radius:5px;
+  font-size:10px;
+  background:#f6f8fa;
+}
+#verify .match-batches .batch.hit{
+  border-color:#8db8e6;
+  background:#eaf4ff;
+  font-weight:800;
+}
+#verify .compact-match-banner{
+  display:flex!important;
+  align-items:center;
+  gap:18px;
+  padding:14px 18px!important;
+  margin:14px 18px!important;
+  border:1px solid #cfe1d5;
+  background:#f5fbf6;
+  border-radius:12px;
+}
+#verify .match-count{
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+  white-space:nowrap;
+}
+#verify .match-count b{font-size:28px}
+#verify .match-note{font-size:12px;color:#5e6b78}
+#verify .verify-no-match{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+#verify .verify-no-match strong{font-size:15px}
+#verify .verify-no-match span{font-size:12px;color:#657386}
+#verify #vChoices{margin-bottom:12px}
+@media(max-width:800px){
+  #verify .compact-match-banner{align-items:flex-start;flex-direction:column;gap:6px}
+  #verify .verify-table-shell{overflow-x:auto!important}
+  #verify .verify-table-shell table{min-width:780px!important}
+}
+</style>
+
+
+<style id="v37-final-fixes">
+.clean-table-wrap{
+  overflow-x:auto!important;
+  overflow-y:visible!important;
+  max-height:none!important;
+  height:auto!important;
+  scrollbar-width:auto;
+}
+.clean-table{
+  height:auto!important;
+  min-height:0!important;
+}
+#student .clean-table tbody tr{
+  height:72px!important;
+}
+#student .clean-table td{
+  height:72px!important;
+  max-height:72px!important;
+}
+#student .clean-slot{
+  height:auto!important;
+  min-height:62px!important;
+  max-height:68px!important;
+  overflow:hidden!important;
+}
+#student .cs-batches{
+  margin-top:3px;
+  font-size:6.4px;
+  line-height:1.15;
+  max-width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+#student .cs-more{font-weight:800}
+#verify .verify-table-shell{
+  max-height:none!important;
+  overflow-x:auto!important;
+  overflow-y:visible!important;
+}
+#verify .verify-table-shell table{
+  min-width:0!important;
+  width:100%!important;
+  table-layout:fixed!important;
+}
+#verify .verify-table-shell th,
+#verify .verify-table-shell td{
+  min-width:0!important;
+  height:auto!important;
+  padding:10px!important;
+  vertical-align:middle!important;
+}
+#verify .verify-table-shell th:nth-child(1){width:90px!important}
+#verify .verify-table-shell th:nth-child(2){width:85px!important}
+#verify .verify-table-shell th:nth-child(4){width:120px!important}
+#verify .verify-table-shell th:nth-child(5){width:170px!important}
+#verify .verify-table-shell .match-subject{
+  font-weight:900;
+  line-height:1.2;
+}
+#verify .verify-table-shell .match-batches{
+  display:flex;
+  flex-wrap:wrap;
+  gap:3px;
+}
+#verify .verify-table-shell .match-batches .batch{
+  font-size:7px;
+  padding:3px 5px;
+  background:#eef2f5;
+  border:1px solid #d5dce3;
+  border-radius:4px;
+}
+#verify .verify-table-shell .match-batches .batch.hit{
+  background:#e5f1ff;
+  border-color:#a8c7e8;
+  font-weight:900;
+}
+</style>
+<style id="v41-home-css">
+.home-v40{min-height:calc(100vh - 66px);background:radial-gradient(circle at 82% 16%,rgba(34,211,238,.10),transparent 28%),radial-gradient(circle at 12% 38%,rgba(59,130,246,.08),transparent 30%),#070a0f;color:#f7fafc;padding:58px 5vw 72px;overflow:hidden}.home-v40 *{box-sizing:border-box}.v40-shell{max-width:1280px;margin:0 auto}.v40-kicker{color:#67e8f9;font:700 11px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.22em;text-transform:uppercase;margin-bottom:20px}.v40-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);gap:64px;align-items:center;padding:32px 0 68px}.v40-hero h1{margin:0;max-width:800px;font-size:clamp(48px,7vw,92px);line-height:.92;letter-spacing:-.055em;font-weight:850}.v40-hero h1 span{color:#67e8f9}.v40-lead{max-width:650px;margin:28px 0 34px;color:#aab6c5;font-size:18px;line-height:1.7}.v40-actions{display:flex;gap:12px;flex-wrap:wrap}.v40-btn{border:1px solid #273244;border-radius:10px;padding:13px 19px;text-decoration:none;font-weight:750;display:inline-flex;align-items:center;gap:9px;transition:.2s ease;background:#0e141d;color:#fff;cursor:pointer}.v40-btn.primary{border-color:#22d3ee;background:#22d3ee;color:#061017}.v40-btn:hover{transform:translateY(-2px);border-color:#67e8f9}.v40-status{border:1px solid #1e2937;border-radius:18px;background:#0b1119;padding:20px;box-shadow:0 20px 70px rgba(0,0,0,.35)}.v40-status-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.v40-live{display:flex;align-items:center;gap:8px;color:#b9c5d3;font-size:12px}.v40-dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 16px #34d399}.v40-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.v40-mini{min-height:105px;padding:16px;border:1px solid #202b3a;border-radius:12px;background:#0d141e}.v40-mini b{display:block;font-size:15px;margin-bottom:8px}.v40-mini span{color:#7f8da0;font-size:12px;line-height:1.45}.v40-section{padding:10px 0 70px}.v40-section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}.v40-section-head h2{margin:0;font-size:28px;letter-spacing:-.03em}.v40-section-head p{margin:0;color:#7f8da0;font-size:13px}.v40-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.v40-card{min-height:185px;padding:20px;border:1px solid #1e2937;border-radius:14px;background:#0b1119;text-decoration:none;color:#fff;transition:.2s ease;display:flex;flex-direction:column;justify-content:space-between;text-align:left;cursor:pointer}.v40-card:hover{transform:translateY(-4px);border-color:#3b82f6;background:#0e1621}.v40-icon{width:38px;height:38px;border-radius:9px;display:grid;place-items:center;background:#111d2b;color:#67e8f9;font-weight:800}.v40-card h3{margin:22px 0 7px;font-size:17px}.v40-card p{margin:0;color:#8492a4;font-size:12px;line-height:1.55}.v40-arrow{align-self:flex-end;color:#64748b}.v40-bottom{border-top:1px solid #182231;padding-top:22px;display:flex;justify-content:space-between;gap:20px;color:#64748b;font-size:11px}@media(max-width:1000px){.v40-hero{grid-template-columns:1fr;gap:35px}.v40-cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.home-v40{padding:38px 20px 60px}.v40-hero{padding-top:20px}.v40-hero h1{font-size:52px}.v40-cards{grid-template-columns:1fr}.v40-mini-grid{grid-template-columns:1fr}}
+</style>
+<style>
+.nav-toggle { display: none; background: none; border: 0; color: #fff; font-size: 24px; cursor: pointer; padding: 0 10px; }
+.beta-link { padding: 9px 12px; border-radius: 8px; text-decoration: none; font-weight: 800; margin-left: auto; transition: 0.2s; cursor: pointer; border: 0; font-size: 14px; }
+@media (max-width: 820px) {
+  .nav-toggle { display: block; margin-left: auto; }
+  .links {
+    display: none !important; position: absolute; top: 68px; left: 0; right: 0; background: rgba(5,7,10,0.95);
+    backdrop-filter: blur(20px); flex-direction: column; padding: 10px 20px 20px; border-bottom: 1px solid var(--line);
+  }
+  .links.show { display: flex !important; }
+  .links button, .links a { width: 100%; text-align: left; padding: 14px 15px; font-size: 16px; display: block !important; margin: 0; }
+  .links .beta-link { display: block; text-align: center; margin-top: 10px; margin-left: 0; }
+  .status { display: none; }
+}
+/* Dark Mode CSS */
+html.dark-mode { filter: invert(1) hue-rotate(180deg); }
+html.dark-mode img, html.dark-mode canvas { filter: invert(1) hue-rotate(180deg); }
+
+/* Print Styles */
+@media print {
+  html, body { background: #fff !important; color: #000 !important; margin: 0 !important; padding: 0 !important; }
+  html.dark-mode { filter: none !important; }
+  .nav, .hero, .grid, .clean-controls, .clean-status, .clean-export-group, .clean-section-title, .elective-grid, .tt-legend, .notice { display: none !important; }
+  .page { display: none !important; }
+  .page.active { display: block !important; }
+  .clean-student { background: transparent !important; padding: 0 !important; min-height: auto !important; }
+  .clean-head { margin-bottom: 15px !important; }
+  .clean-head p, .eyebrow { display: none !important; }
+  .clean-table-wrap { overflow: visible !important; border: 0 !important; box-shadow: none !important; }
+  .clean-table { width: 100% !important; min-width: 100% !important; border-collapse: collapse !important; border-spacing: 0 !important; }
+  .clean-table th, .clean-table td { border: 1px solid #999 !important; padding: 4px !important; page-break-inside: avoid; }
+  .clean-table th { background: #f0f0f0 !important; color: #000 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 8px !important; }
+  .clean-table th:first-child { background: #fff !important; color: #000 !important; width: 60px !important; }
+  .clean-table td.day { background: #f8f8f8 !important; color: #000 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 9px !important; }
+  .clean-slot { background: #fff !important; border: 0 !important; min-height: auto !important; padding: 2px !important; }
+  .cs-title { font-size: 8px !important; color: #000 !important; }
+  .cs-room, .cs-meta, .cs-batches { font-size: 7px !important; color: #333 !important; }
+}
+</style>
+<link rel="manifest" href="/manifest.json">
+</head><body>
+<nav class="nav">
+  <div class="brand">SRU <b>TT</b> <span style="font-size:9px;background:#eab308;color:#000;padding:2px 5px;border-radius:4px;margin-left:5px">BETA</span></div>
+  <div class="links" id="navLinks">
+    <button data-page="home" class="active">Home</button>
+    <button data-page="student">Student</button>
+    <button data-page="faculty">Faculty</button>
+    <button data-page="rooms">Rooms</button>
+    <button data-page="verify">Verify</button>
+    <button data-page="free">Free Rooms</button>
+    <button id="darkModeToggle" class="beta-link" style="background:#334155;color:#fff!important;margin-left:auto">🌙 Dark Mode</button>
+    <a href="index.html" class="beta-link" style="background:transparent;border:1px solid #334155;color:#94a3b8!important;margin-left:10px">← Back to Stable</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
+  <div class="status">BETA VERSION</div>
+</nav>
+<main>
+<section id="home" class="page active"><div class="hero"><div class="eyebrow">SR University · Timetable Intelligence</div><h1>Your timetable.<br><span>Verified.</span></h1><p>A single professional workspace for Student, Faculty and Room timetables, built around the real SRU public timetable workflows.</p></div><div class="grid"><div class="tile" data-go="student"><div class="icon">🎓</div><h3>Student Timetable</h3><p>Degree → Year → Batch. Every applicable offering stays visible, including complete batch coverage.</p></div><div class="tile" data-go="faculty"><div class="icon">👨‍🏫</div><h3>Faculty Timetable</h3><p>One faculty can teach many subjects. This view filters the official faculty report without assuming a single course identity.</p></div><div class="tile" data-go="rooms"><div class="icon">🏫</div><h3>Room Explorer</h3><p>Inspect the official room report by day and time with subject, faculty and batch information.</p></div><div class="tile" data-go="verify"><div class="icon">🔍</div><h3>Cross Verification</h3><p>Discover your PE/SE offerings by batch, verify the selected subject against Student + Faculty + Room data, and generate its weekly timetable.</p></div><div class="tile" data-go="free"><div class="icon">🟢</div><h3>Free Rooms</h3><p>Jump directly to SRU's official free-room workflow while its request schema remains separate.</p></div><div class="tile"><div class="icon">⚡</div><h3>Source-aware</h3><p>No hardcoded PE2/PE3/PE4 subject identity and no dependency on incomplete E-Batch mappings.</p></div></div></section>
+<section id="student" class="page"><div class="clean-student"><div class="clean-wrap">
+<div class="clean-head"><div><div class="eyebrow">SR University · Student</div><h2>My SRU Timetable</h2><p>Choose your batch to see all classes. Elective selections are optional filters.</p></div><div class="clean-export-group">
+<button class="clean-export" id="studentExportPng">⇩&nbsp; PNG</button>
+<button class="clean-export" id="studentExportPdf">⇩&nbsp; PDF</button>
+<button class="clean-export" id="studentExportXls">⇩&nbsp; Excel</button>
+</div></div>
+<div class="clean-controls"><div class="clean-field"><label>DEGREE</label><select id="sDegree"><option value="">Select Degree</option><option value="B.Com-BM">B.Com-BM</option><option value="B.Sc(Comp.)-CSAI">B.Sc(Comp.)-CSAI</option><option value="B.Sc.(Hons.)-AGRI">B.Sc.(Hons.)-AGRI</option><option value="BBA-BM">BBA-BM</option><option value="BCA-CSAI">BCA-CSAI</option><option value="BTECH">BTECH</option><option value="BTECH-CE">BTECH-CE</option><option value="BTECH-CSE">BTECH-CSE</option><option value="BTECH-ECE">BTECH-ECE</option><option value="BTECH-EEE">BTECH-EEE</option><option value="BTECH-IEP-CSE">BTECH-IEP-CSE</option><option value="BTECH-ME">BTECH-ME</option><option value="EXMBA-BM">EXMBA-BM</option><option value="M.Sc-CSE">M.Sc-CSE</option><option value="M.Sc. (Agriculture)-AGRI">M.Sc. (Agriculture)-AGRI</option><option value="M.Sc. (Agrl. Extension)-AGRI">M.Sc. (Agrl. Extension)-AGRI</option><option value="M.Sc. (Agronomy)-AGRI">M.Sc. (Agronomy)-AGRI</option><option value="M.Sc. (Entomology)-AGRI">M.Sc. (Entomology)-AGRI</option><option value="M.Sc. (Genetics and Plant Breeding)-AGRI">M.Sc. (Genetics and Plant Breeding)-AGRI</option><option value="M.Sc. (Horticulture)-AGRI">M.Sc. (Horticulture)-AGRI</option><option value="M.Sc.(Comp. Sci.)-CSE">M.Sc.(Comp. Sci.)-CSE</option><option value="MBA-BM">MBA-BM</option><option value="MCA-CSE">MCA-CSE</option><option value="MTECH-CE">MTECH-CE</option><option value="MTECH-CSE">MTECH-CSE</option><option value="MTECH-ECE">MTECH-ECE</option><option value="MTECH-EEE">MTECH-EEE</option><option value="MTECH-ME">MTECH-ME</option><option value="PhD-CE">PhD-CE</option><option value="PhD-ECE">PhD-ECE</option><option value="PhD-EEE">PhD-EEE</option><option value="PhD-Math">PhD-Math</option><option value="PhD-ME">PhD-ME</option></select></div>
+<div class="clean-field"><label>YEAR</label><select id="sYear" disabled><option value="">Select Year</option></select></div>
+<div class="clean-field"><label>BATCH</label><select id="sBatch" disabled><option value="">Select Batch</option></select></div><button class="clean-load" id="sLoad" disabled>Load timetable</button></div>
+<div class="clean-status"><span id="sState">Select Degree → Year → Batch</span><span id="sSelected"></span></div>
+<div class="clean-section-title"><span>ELECTIVES</span><small>All classes are shown after loading. Select PE2, PE3, PE4 or SE2 to filter the timetable. Same-named subjects in different elective categories remain separate.</small></div>
+<div class="elective-grid" id="studentElectives"><div class="clean-field"><label>PE2</label><select id="pPE2" disabled><option value="">Load timetable first</option></select></div><div class="clean-field"><label>PE3</label><select id="pPE3" disabled><option value="">Load timetable first</option></select></div><div class="clean-field"><label>PE4</label><select id="pPE4" disabled><option value="">Load timetable first</option></select></div><div class="clean-field"><label>SE2</label><select id="pSE2" disabled><option value="">Load timetable first</option></select></div></div>
+<div class="clean-table-wrap"><table class="clean-table"><thead id="studentGridHead"></thead><tbody id="studentCleanBody"><tr><td class="clean-empty" colspan="9">Load your timetable to generate your personalized weekly view.</td></tr></tbody></table></div><div class="tt-legend"><span>Lecture = light</span><span>Lab = blue</span><span>Click “Batches” to expand the complete batch list.</span></div>
+</div></div></section><section id="faculty" class="page"><div class="clean-student"><div class="clean-wrap"><div class="clean-head"><div><div class="eyebrow">Faculty workspace</div><h2>Faculty timetable</h2><p>Select a faculty member to see the complete weekly timetable in the same day × time format as the Student and Room views.</p></div><div class="clean-export-group"><button class="clean-export" id="facultyExportPng">⇩&nbsp; PNG</button><button class="clean-export" id="facultyExportPdf">⇩&nbsp; PDF</button><button class="clean-export" id="facultyExportXls">⇩&nbsp; Excel</button></div></div><div class="clean-controls" style="grid-template-columns:1fr auto"><div class="clean-field"><label>FACULTY</label><select id="fFaculty"><option value="">Select Faculty</option></select></div><button class="clean-load" id="fLoad" disabled>Load timetable</button></div><div class="clean-status"><span id="fState">Loading faculty list…</span><span id="fSelected"></span></div><div class="clean-table-wrap"><table class="clean-table"><thead id="facultyGridHead"><tr><th>TIME</th><th>MONDAY</th><th>TUESDAY</th><th>WEDNESDAY</th><th>THURSDAY</th><th>FRIDAY</th><th>SATURDAY</th><th>SUNDAY</th></tr></thead><tbody id="fBody"></tbody></table></div><div class="notice" style="margin-top:12px;background:none;border:0;padding-left:0;padding-right:0">Each cell can contain multiple sessions. Labs, lectures, different subjects, rooms and batch coverage are preserved instead of being flattened into a simple list.</div></div></div></section>
+<section id="rooms" class="page"><div class="clean-student"><div class="clean-wrap"><div class="clean-head"><div><div class="eyebrow">Room workspace</div><h2>Room Timetable</h2><p>Room Report exposes the weekly day/time schedule for the selected room.</p></div><div class="clean-export-group"><button class="clean-export" id="roomsExportPng">⇩&nbsp; PNG</button><button class="clean-export" id="roomsExportPdf">⇩&nbsp; PDF</button><button class="clean-export" id="roomsExportXls">⇩&nbsp; Excel</button></div></div><div class="clean-controls" style="grid-template-columns:1fr auto"><div class="clean-field"><label>ROOM</label><select id="rRoom"><option value="">Select Room</option></select></div><button class="clean-load" id="rLoad" disabled>Load room</button></div><div class="clean-status"><span id="rState">Loading room list…</span></div><div class="clean-table-wrap" style="max-height:calc(100vh - 215px)"><table class="clean-table"><thead id="roomsGridHead"><tr><th>TIME</th><th>MONDAY</th><th>TUESDAY</th><th>WEDNESDAY</th><th>THURSDAY</th><th>FRIDAY</th><th>SATURDAY</th><th>SUNDAY</th></tr></thead><tbody id="rBody"></tbody></table></div></div></div></section>
+<section id="verify" class="page"><div class="clean-student"><div class="clean-wrap">
+<div class="clean-head"><div><div class="eyebrow">Student ↔ Faculty verification</div><h2>Cross Verification</h2><p>Select Degree → Year → Batch, optionally choose an elective category, then choose the professor. The portal compares the complete Student timetable against the selected Professor timetable.</p></div></div>
+<div class="clean-controls" style="grid-template-columns:1fr 1fr 1.3fr">
+<div class="clean-field"><label>DEGREE</label><select id="vDegree"><option value="">Select Degree</option><option value="B.Com-BM">B.Com-BM</option><option value="B.Sc(Comp.)-CSAI">B.Sc(Comp.)-CSAI</option><option value="B.Sc.(Hons.)-AGRI">B.Sc.(Hons.)-AGRI</option><option value="BBA-BM">BBA-BM</option><option value="BCA-CSAI">BCA-CSAI</option><option value="BTECH">BTECH</option><option value="BTECH-CE">BTECH-CE</option><option value="BTECH-CSE">BTECH-CSE</option><option value="BTECH-ECE">BTECH-ECE</option><option value="BTECH-EEE">BTECH-EEE</option><option value="BTECH-IEP-CSE">BTECH-IEP-CSE</option><option value="BTECH-ME">BTECH-ME</option><option value="EXMBA-BM">EXMBA-BM</option><option value="M.Sc-CSE">M.Sc-CSE</option><option value="M.Sc. (Agriculture)-AGRI">M.Sc. (Agriculture)-AGRI</option><option value="M.Sc. (Agrl. Extension)-AGRI">M.Sc. (Agrl. Extension)-AGRI</option><option value="M.Sc. (Agronomy)-AGRI">M.Sc. (Agronomy)-AGRI</option><option value="M.Sc. (Entomology)-AGRI">M.Sc. (Entomology)-AGRI</option><option value="M.Sc. (Genetics and Plant Breeding)-AGRI">M.Sc. (Genetics and Plant Breeding)-AGRI</option><option value="M.Sc. (Horticulture)-AGRI">M.Sc. (Horticulture)-AGRI</option><option value="M.Sc.(Comp. Sci.)-CSE">M.Sc.(Comp. Sci.)-CSE</option><option value="MBA-BM">MBA-BM</option><option value="MCA-CSE">MCA-CSE</option><option value="MTECH-CE">MTECH-CE</option><option value="MTECH-CSE">MTECH-CSE</option><option value="MTECH-ECE">MTECH-ECE</option><option value="MTECH-EEE">MTECH-EEE</option><option value="MTECH-ME">MTECH-ME</option><option value="PhD-CE">PhD-CE</option><option value="PhD-ECE">PhD-ECE</option><option value="PhD-EEE">PhD-EEE</option><option value="PhD-Math">PhD-Math</option><option value="PhD-ME">PhD-ME</option></select></div>
+<div class="clean-field"><label>YEAR</label><select id="vYear" disabled><option value="">Select Year</option></select></div>
+<div class="clean-field"><label>STUDENT BATCH</label><select id="vBatch" disabled><option value="">Select Batch</option></select></div>
+</div>
+<div class="clean-controls" style="grid-template-columns:1fr 1.5fr auto;margin-top:14px">
+<div class="clean-field"><label>ELECTIVE (OPTIONAL)</label><select id="vCategory" disabled><option value="ALL">All subjects</option></select></div>
+<div class="clean-field"><label>PROFESSOR</label><select id="vProfessor" disabled><option value="">Select professor</option></select></div>
+<button class="clean-load" id="vLoad" disabled>Compare timetables</button>
+</div>
+<div class="clean-status"><span id="vState">Select Degree → Year → Batch to begin.</span><span id="vSummary"></span></div>
+<div id="vChoices" class="verify-flow" style="display:none"></div>
+<div id="vResult" class="verify-result-empty" style="text-align:center;padding:30px;background:#fff;border:1px solid #d3d7dc;border-radius:4px;color:#777;font-size:11px;margin-bottom:14px">Choose Batch → optionally choose an elective → choose Professor → Compare.</div>
+<div class="clean-table-wrap verify-table-shell" style="max-height:none!important;overflow-y:visible!important;box-shadow:0 1px 3px rgba(0,0,0,0.05)"><table class="clean-table"><thead><tr><th>DAY</th><th>TIME</th><th>SUBJECT</th><th>ROOM</th><th>PROFESSOR</th><th>BATCHES</th></tr></thead><tbody id="vBody"></tbody></table></div>
+<div id="vChecks" class="verify-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px"></div>
+<div class="notice" style="margin-top:14px;background:none;border:0;padding-left:0;padding-right:0">MATCH means the Student timetable and selected Professor timetable contain the same normalized subject on the same day and time. Room and batch details are displayed for context; they are not required to declare a Student ↔ Faculty subject/time match.</div>
+</div></div></section>
+<section id="free" class="page"><div class="wrap"><div class="page-title"><div class="eyebrow">Availability</div><h2>Free Rooms</h2><p>SRU's free-room report is a separate public workflow. We keep it directly accessible rather than pretending its request schema is the same as Room Report.</p></div><div class="panel"><div class="list"><div class="row"><b>Official SRU</b><span>Live availability workflow</span><a class="btn primary" href="https://timetable.sruniv.com/room_free_slots" target="_blank" rel="noopener">Open Free Rooms ↗</a><span>Use the official report</span></div></div></div></div></section>
+</main>
+<script>
+
+function mountSearchDropdown(selectId, placeholder){
+  const select=$(selectId);
+  if(!select) return null;
+  if(select.dataset.smartMounted==='1') return select._smartApi;
+  select.dataset.smartMounted='1';
+  select.classList.add('native-directory-select');
+
+  const root=document.createElement('div');
+  root.className='smart-select';
+  const control=document.createElement('div');
+  control.className='smart-select-control';
+  control.tabIndex=0;
+  const label=document.createElement('span');
+  const arrow=document.createElement('span');
+  arrow.className='smart-arrow';
+  arrow.textContent='⌄';
+  control.append(label,arrow);
+
+  const menu=document.createElement('div');
+  menu.className='smart-select-menu';
+  const search=document.createElement('input');
+  search.className='smart-select-search';
+  search.type='search';
+  search.placeholder=placeholder||'Search…';
+  search.autocomplete='off';
+  const options=document.createElement('div');
+  options.className='smart-select-options';
+  menu.append(search,options);
+  root.append(control,menu);
+
+  select.parentNode.insertBefore(root,select);
+
+  function sync(){
+    const o=select.options[select.selectedIndex];
+    label.textContent=o?.textContent || placeholder || 'Select';
+  }
+  function render(q=''){
+    options.innerHTML='';
+    const needle=String(q).trim().toLowerCase();
+    const list=[...select.options].filter(o=>o.value);
+    const matches=list.filter(o=>!needle || o.textContent.toLowerCase().includes(needle));
+    if(!matches.length){
+      options.innerHTML='<div class="smart-empty">No matching results</div>';
+      return;
+    }
+    matches.forEach(o=>{
+      const el=document.createElement('div');
+      el.className='smart-option'+(o.value===select.value?' selected':'');
+      el.textContent=o.textContent;
+      el.title=o.textContent;
+      el.onclick=()=>{
+        select.value=o.value;
+        select.dispatchEvent(new Event('change',{bubbles:true}));
+        sync();
+        root.classList.remove('open');
+        search.value='';
+        render('');
+      };
+      options.append(el);
+    });
+  }
+  control.onclick=()=>{
+    root.classList.toggle('open');
+    if(root.classList.contains('open')){
+      render(search.value);
+      setTimeout(()=>search.focus(),0);
+    }
+  };
+  control.onkeydown=e=>{
+    if(e.key==='Enter'||e.key===' '||e.key==='ArrowDown'){
+      e.preventDefault();control.click();
+    }
+  };
+  search.oninput=()=>render(search.value);
+  document.addEventListener('click',e=>{
+    if(!root.contains(e.target)) root.classList.remove('open');
+  });
+  select.addEventListener('change',()=>{sync();render(search.value)});
+  sync();
+
+  const api={refresh:()=>{sync();render(search.value)},root};
+  select._smartApi=api;
+  return api;
+}
+function refreshDirectorySearches(){
+  mountSearchDropdown('fFaculty','Search faculty by name…')?.refresh();
+  mountSearchDropdown('rRoom','Search room number or name…')?.refresh();
+}
+
+const $=id=>document.getElementById(id),$$=s=>document.querySelectorAll(s),DAYS=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],TIMES=['08:30','09:30','10:30','11:30','12:30','13:30','14:30','15:30','16:30','17:30','18:30','19:30','20:30'];
+let studentData=null,selectedBatch='',facultyList=[],roomList=[];
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+async function getJSON(url,opts){const r=await fetch(url,opts);let d;try{d=await r.json()}catch{throw new Error('Server returned a non-JSON response ('+r.status+')')};if(!r.ok||d.success===false&&d.error)throw new Error(d.error||('Request failed ('+r.status+')'));return d}
+function post(url,body){return getJSON(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})}
+
+function show(page){
+  if(document.getElementById('navLinks')) document.getElementById('navLinks').classList.remove('show');
+  $$('.page').forEach(el=>el.classList.remove('active'));
+  $$('.links button[data-page]').forEach(el=>el.classList.remove('active'));
+  const target=$(page);
+  if(target)target.classList.add('active');
+  const btn=document.querySelector(`.links button[data-page="${page}"]`);
+  if(btn)btn.classList.add('active');
+  history.replaceState(null,'','#'+page);
+  window.scrollTo(0,0);
+}
+document.getElementById('darkModeToggle').onclick = () => {
+  document.documentElement.classList.toggle('dark-mode');
+  const isDark = document.documentElement.classList.contains('dark-mode');
+  document.getElementById('darkModeToggle').innerHTML = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+};
+
+document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>show(b.dataset.page));document.querySelectorAll('[data-go]').forEach(x=>x.onclick=()=>show(x.dataset.go));
+function fill(sel,arr,placeholder){if(!sel)return;sel.innerHTML='';sel.add(new Option(placeholder,''));arr.forEach(x=>sel.add(new Option(x.label??x.value,x.value??x.label)))}
+function batchArr(s){return String(s||'').split(',').map(x=>x.trim()).filter(Boolean)}
+function card(x){const bs=batchArr(x.batch),hit=bs.includes(selectedBatch),lab=String(x.ltp||'').toLowerCase().includes('lab');const room=x.room_name||x.room||'Room';const faculty=x.facultyName||x.faculty||'Faculty';return `<div class="card ${lab?'lab':''}" title="${esc((x.subject||'Untitled')+' · '+(x.ltp||'Class')+' · '+room+' · '+faculty+' · Batches: '+bs.join(', '))}"><div class="subject">${esc(x.subject||'Untitled')}</div><div class="sub"><span class="tag">${esc(x.ltp||'Class')}</span>${esc(room)}</div><div class="sub">● ${esc(faculty)}</div><div class="batches">${bs.map(b=>`<span class="batch ${b===selectedBatch?'hit':''}">${esc(b)}</span>`).join('')}</div></div>`}
+function renderGrid(data,bodyId){
+ const src=data?.data||{}, present=new Set();
+ DAYS.forEach(d=>Object.keys(src?.[d]||{}).forEach(t=>{if(TIMES.includes(t))present.add(t)}));
+ const slots=TIMES.filter(t=>present.has(t)); const use=slots.length?slots:TIMES;
+ let h='';
+ use.forEach(t=>{
+   h+=`<tr><td>${esc(t)}</td>`;
+   DAYS.forEach(d=>{
+     const a=Array.isArray(src?.[d]?.[t])?src[d][t]:[];
+     h+=`<td data-day="${d}">${a.length?'<div class="class-stack">'+a.map(card).join('')+'</div>':''}</td>`;
+   });
+   h+='</tr>';
+ });
+ $(bodyId).innerHTML=h||'<tr><td colspan="8" class="empty">No schedule returned.</td></tr>';
+}
+async function loadMeta(){try{const f=await getJSON('/api/sru/faculty-list');facultyList=f.facultyList||[];fill($('fFaculty'),facultyList,'Select Faculty');$('fState').textContent=facultyList.length+' faculty members available';mountSearchDropdown('fFaculty','Search faculty by name…')?.refresh()}catch(e){$('fState').textContent='Faculty list: '+e.message}try{const r=await getJSON('/api/sru/rooms');roomList=r.rooms||[];fill($('rRoom'),roomList,'Select Room');$('rState').textContent=roomList.length+' rooms available';mountSearchDropdown('rRoom','Search room number or name…')?.refresh()}catch(e){$('rState').textContent='Room list: '+e.message}}
+$('sDegree').onchange=async()=>{const d=$('sDegree').value;$('sYear').disabled=true;$('sBatch').disabled=true;$('sLoad').disabled=true;if(!d)return;$('sState').innerHTML='<span class="spinner"></span>Loading years…';try{const x=await getJSON('/api/sru/years?degree='+encodeURIComponent(d));fill($('sYear'),(x.yearList||[]).map(y=>({label:y.year,value:y.year})),'Select Year');$('sYear').disabled=false;$('sState').textContent=(x.yearList||[]).length+' year option(s) loaded'}catch(e){$('sState').textContent=e.message}};
+$('sYear').onchange=async()=>{const y=$('sYear').value,d=$('sDegree').value;$('sBatch').disabled=true;$('sLoad').disabled=true;if(!y)return;$('sState').innerHTML='<span class="spinner"></span>Loading batches…';try{const x=await getJSON('/api/sru/batches?degree='+encodeURIComponent(d)+'&year='+encodeURIComponent(y));fill($('sBatch'),(x.batchList||[]).map(b=>({label:b.batch,value:b.batch})),'Select Batch');$('sBatch').disabled=false;$('sState').textContent=(x.batchList||[]).length+' batch option(s) loaded'}catch(e){$('sState').textContent=e.message}};
+$('sBatch').onchange=()=>{$('sLoad').disabled=!$('sBatch').value};
+$('sLoad').onclick=async()=>{
+ const degree=$('sDegree').value;
+ const year=$('sYear').value;
+ const batch=$('sBatch').value;
+ if(!degree||!year||!batch)return;
+
+ $('sState').innerHTML='<span class="spinner"></span>Loading Student timetable…';
+ $('sLoad').disabled=true;
+ try{
+   const data=await post('/api/sru/student',{degree,year,batch});
+   studentData=data;
+   selectedBatch=batch;
+
+   // Important: render ALL Student classes immediately. Electives are filters,
+   // never prerequisites for loading the timetable.
+   renderPersonalStudentGrid();
+
+   ['PE2','PE3','PE4','SE2'].forEach(c=>{const el=$('p'+c);if(el){el.value='';el.disabled=true;}});
+   electiveOptionsFromStudent();
+   $('sState').textContent='Live timetable loaded · electives are optional filters';
+   $('sSelected').textContent=`${degree} · ${year} · ${batch}`;
+ }catch(e){
+   $('sState').textContent='Failed to load timetable · '+(e.message||'Unknown error');
+   const body=$('studentCleanBody');
+   if(body) body.innerHTML=`<tr><td class="clean-empty" colspan="15">${esc(e.message||'Unable to load Student timetable')}</td></tr>`;
+ }finally{
+   $('sLoad').disabled=false;
+ }
+};
+$('fFaculty').onchange=()=>{$('fLoad').disabled=!$('fFaculty').value};
+$('fLoad').onclick=async()=>{const id=$('fFaculty').value;$('fState').innerHTML='<span class="spinner"></span>Loading faculty timetable…';try{const x=await post('/api/sru/faculty',{faculty:id});const rows=Array.isArray(x.data)?x.data:flatten(x.data);const grid={data:{}};rows.forEach(r=>{const day=r.day||'Unknown';const time=r.time||'Unknown';if(!grid.data[day])grid.data[day]={};if(!Array.isArray(grid.data[day][time]))grid.data[day][time]=[];grid.data[day][time].push(r)});selectedBatch='';renderGrid(grid,'fBody');$('fSelected').textContent=$('fFaculty').selectedOptions[0]?.textContent||'';$('fState').textContent=rows.length+' session(s) loaded · weekly timetable view'}catch(e){$('fState').textContent=e.message}};
+$('rRoom').onchange=()=>{$('rLoad').disabled=!$('rRoom').value};
+$('rLoad').onclick=async()=>{const id=$('rRoom').value;$('rState').innerHTML='<span class="spinner"></span>Loading room report…';try{const x=await post('/api/sru/room',{room:id});renderGrid(x,'rBody');$('rState').textContent='Live room report loaded'}catch(e){$('rState').textContent=e.message}};
+function flatten(data){if(Array.isArray(data))return data;const out=[];Object.entries(data||{}).forEach(([day,slots])=>Object.entries(slots||{}).forEach(([time,arr])=>(arr||[]).forEach(x=>out.push({...x,day,time}))));return out}
+
+function normalize(s){return String(s||'').toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,' ').trim()}
+function facultyIds(names){return names.map(name=>{const n=normalize(name);const hit=facultyList.find(f=>normalize(f.label)===n)||facultyList.find(f=>normalize(f.label).includes(n)||n.includes(normalize(f.label)));return hit?.value}).filter(Boolean)}
+function roomId(name){const n=normalize(name);const hit=roomList.find(r=>normalize(r.label)===n)||roomList.find(r=>normalize(r.label).includes(n)||n.includes(normalize(r.label)));return hit?.value}
+function electiveCategory(subject){const m=String(subject||'').match(/^(PE[0-9]+|SE[0-9]+)\s*[- ]/i);return m?m[1].toUpperCase():''}
+function electiveSubjectKey(subject){const s=String(subject||'');const m=s.match(/^(PE[0-9]+|SE[0-9]+)\s*[- ]/i);const cat=m?m[1].toUpperCase():'OTHER';const name=normalize(s.replace(/^(PE[0-9]+|SE[0-9]+)\s*[- ]/i,''));return cat+'|'+name}
+function subjectCore(subject){return normalize(String(subject||'').replace(/^(PE[0-9]+|SE[0-9]+)\s*[- ]/i,''))}
+function currentVerifyStudentRows(){
+ if(!studentData||!selectedBatch)return[];
+ return flatten(studentData.data).filter(r=>batchArr(r.batch).includes(selectedBatch));
+}
+function verifyYearForBatch(batch){
+ const m=String(batch||'').match(/^(20)?(\d{2})/);
+ if(!m)return '';
+ const batchStart=2000+Number(m[2]);
+ const now=new Date();
+ const academicStart=now.getMonth()>=5?now.getFullYear():now.getFullYear()-1;
+ const diff=academicStart-batchStart;
+ return ({0:'First',1:'Second',2:'Third',3:'Fourth',4:'Fifth'}[diff]||'Fourth');
+}
+$('vDegree').onchange=async()=>{const d=$('vDegree').value;$('vYear').disabled=true;$('vBatch').disabled=true;$('vCategory').disabled=true;$('vProfessor').disabled=true;$('vLoad').disabled=true;if(!d)return;$('vState').innerHTML='<span class="spinner"></span>Loading years…';try{const x=await getJSON('/api/sru/years?degree='+encodeURIComponent(d));fill($('vYear'),(x.yearList||[]).map(y=>({label:y.year,value:y.year})),'Select Year');$('vYear').disabled=false;$('vState').textContent=(x.yearList||[]).length+' year option(s) loaded'}catch(e){$('vState').textContent=e.message}};
+$('vYear').onchange=async()=>{const y=$('vYear').value,d=$('vDegree').value;$('vBatch').disabled=true;$('vCategory').disabled=true;$('vProfessor').disabled=true;$('vLoad').disabled=true;if(!y)return;$('vState').innerHTML='<span class="spinner"></span>Loading batches…';try{const x=await getJSON('/api/sru/batches?degree='+encodeURIComponent(d)+'&year='+encodeURIComponent(y));fill($('vBatch'),(x.batchList||[]).map(b=>({label:b.batch,value:b.batch})),'Select Batch');$('vBatch').disabled=false;$('vState').textContent=(x.batchList||[]).length+' batch option(s) loaded'}catch(e){$('vState').textContent=e.message}};
+async function loadVerifyStudentBatch(batch){
+ const year=$('vYear').value||verifyYearForBatch(batch);
+ if(studentData&&selectedBatch===batch)return studentData;
+ if(!year)throw new Error('Unable to determine the academic year for '+batch);
+ $('vState').innerHTML='<span class="spinner"></span>Loading Student timetable for '+esc(batch)+'…';
+ const data=await post('/api/sru/student',{batch,year});
+ studentData=data;
+ selectedBatch=batch;
+ return data;
+}
+function populateVerifyCategories(){
+ const rows=currentVerifyStudentRows();
+ const cats=[...new Set(rows.map(r=>electiveCategory(r.subject)).filter(Boolean))]
+   .sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
+
+ const options=[{label:'All subjects · no elective filter',value:'ALL'}]
+   .concat(cats.map(x=>({label:x,value:x})));
+
+ fill($('vCategory'),options,'Select elective option');
+ $('vCategory').disabled=false;
+ $('vCategory').value='ALL';
+
+ $('vChoices').innerHTML=
+   `<div class="verify-category">
+      <b>ALL</b>
+      <span>${rows.length} Student timetable session(s)</span>
+      <span>Compare every class for ${esc(selectedBatch)}</span>
+      <span class="count">Elective optional ✓</span>
+    </div>`+
+   cats.map(c=>{
+     const rs=rows.filter(r=>electiveCategory(r.subject)===c);
+     const subjects=[...new Set(rs.map(r=>subjectCore(r.subject)))];
+     return `<div class="verify-category">
+       <b>${esc(c)}</b>
+       <span>${subjects.length} subject(s)</span>
+       <span>${rs.length} Student timetable session(s)</span>
+       <span class="count">Optional filter</span>
+     </div>`;
+   }).join('');
+
+ $('vState').textContent=cats.length
+   ? `${rows.length} Student session(s) loaded · elective filter is optional`
+   : `${rows.length} Student session(s) loaded · no PE/SE elective required`;
+}
+function populateVerifyProfessors(){
+ const opts=facultyList
+   .map(f=>({label:f.label||f.value,value:f.value||f.label}))
+   .filter(x=>x.value)
+   .sort((a,b)=>a.label.localeCompare(b.label));
+
+ fill($('vProfessor'),opts,'Select professor');
+ $('vProfessor').disabled=!opts.length;
+ $('vLoad').disabled=!opts.length;
+ mountSearchDropdown('vProfessor','Search professor by name…')?.refresh();
+
+ $('vState').textContent=opts.length
+   ? `${opts.length} professor option(s) · select one to compare`
+   : 'No professor records are available';
+}
+$('vBatch').onchange=async()=>{
+ const b=$('vBatch').value;
+ if(!b)return;
+ $('vCategory').disabled=true;
+ $('vProfessor').disabled=true;
+ $('vLoad').disabled=true;
+ $('vBody').innerHTML='';
+ $('vChecks').innerHTML='';
+ $('vSummary').textContent='';
+ $('vChoices').style.display='none';
+ $('vResult').className='verify-result-empty';
+ $('vResult').textContent='Loading Student timetable…';
+ try{
+   await loadVerifyStudentBatch(b);
+   populateVerifyCategories();
+   populateVerifyProfessors();
+   $('vChoices').style.display='grid';
+   $('vResult').className='verify-result-empty';
+   $('vResult').textContent='Student timetable loaded. Choose an elective only if you want to narrow the comparison, then choose a professor.';
+ }catch(e){
+   $('vState').textContent=e.message;
+   $('vResult').textContent=e.message;
+ }
+};
+$('vCategory').onchange=()=>{
+ if(!$('vBatch').value)return;
+ $('vProfessor').disabled=false;
+ $('vLoad').disabled=!$('vProfessor').value;
+ const cat=$('vCategory').value;
+ $('vState').textContent=cat==='ALL'
+   ? `${selectedBatch} · all Student subjects`
+   : `${selectedBatch} · ${cat} filter`;
+};
+$('vProfessor').onchange=()=>{
+ $('vLoad').disabled=!$('vProfessor').value;
+};
+function verifyCard(r,status,side){
+ const lab=String(r.ltp||'').toLowerCase().includes('lab');
+ const cls=status==='MATCH'?'verify-match':status==='MISMATCH'?'verify-mismatch':'verify-missing';
+ const bs=batchArr(r.batch);
+ return `<div class="card ${lab?'lab ':''}${cls}">
+   <div class="subject">${esc(r.subject||'Untitled')}</div>
+   <div class="sub"><span class="tag">${esc(r.ltp||'Class')}</span> ${esc(r.room_name||r.room||'Room')}</div>
+   <div class="sub">● ${esc(r.facultyName||r.faculty||'Faculty')}</div>
+   <div class="batches">${bs.map(b=>`<span class="batch ${b===selectedBatch?'hit':''}">${esc(b)}</span>`).join('')}</div>
+ </div>`;
+}
+function sameSubject(a,b){return subjectCore(a.subject)===subjectCore(b.subject)}
+function sameSlot(a,b){return normalize(a.day)===normalize(b.day)&&String(a.time||'').trim()===String(b.time||'').trim()}
+function sameClassType(a,b){
+ const at=normalize(a.ltp||''),bt=normalize(b.ltp||'');
+ if(!at||!bt)return true;
+ return (at.includes('lab')&&bt.includes('lab')) || (at.includes('lecture')&&bt.includes('lecture')) || at===bt;
+}
+function sameBatchCoverage(a,b){
+ const sb=batchArr(a.batch), fb=batchArr(b.batch);
+ if(!sb.length||!fb.length)return true;
+ return sb.some(x=>fb.includes(x));
+}
+function renderVerifyComparison(studentRows,facultyRows){
+ const selectedCat=$('vCategory').value||'ALL';
+ const studentRelevant=selectedCat==='ALL'
+   ? studentRows
+   : studentRows.filter(r=>electiveCategory(r.subject)===selectedCat);
+
+ const rows=[];
+ studentRelevant.forEach(s=>{
+   const exact=facultyRows.filter(f=>sameSlot(s,f)&&sameSubject(s,f)&&sameClassType(s,f)&&sameBatchCoverage(s,f));
+   exact.forEach(f=>rows.push({student:s,faculty:f,status:'MATCH'}));
+ });
+
+ const unique=[];
+ const seen=new Set();
+ rows.forEach(x=>{
+   const key=[
+     normalize(x.student.day),
+     String(x.student.time),
+     subjectCore(x.student.subject),
+     x.student.room_name||x.student.room||'',
+     x.faculty.facultyName||x.faculty.faculty||''
+   ].join('|');
+   if(!seen.has(key)){seen.add(key);unique.push(x);}
+ });
+
+ $('vBody').innerHTML='';
+ $('vResult').className='verify-result-banner compact-match-banner';
+
+ if(!unique.length){
+   $('vResult').innerHTML=`
+     <div class="verify-no-match">
+       <strong>No exact match found</strong>
+       <span>No class was found where Student batch, Professor, subject, day and time all line up.</span>
+     </div>`;
+   $('vSummary').textContent='0 exact matches';
+   $('vChecks').innerHTML='';
+   return {matches:0,mismatches:0,missing:0,total:0,studentRelevant,facultyRelevant:[]};
+ }
+
+ $('vResult').innerHTML=`
+   <div class="match-count"><b>${unique.length}</b><span>exact class match${unique.length===1?'':'es'}</span></div>
+   <div class="match-note">Showing only classes where the Student timetable and Professor timetable have the same subject at the same day and time.</div>`;
+
+ $('vSummary').textContent=`${unique.length} exact match${unique.length===1?'':'es'}`;
+
+ $('vBody').innerHTML=unique.map(x=>`
+   <tr>
+     <td>${esc(x.student.day)}</td>
+     <td><b>${esc(x.student.time)}</b></td>
+     <td>
+       <div class="match-subject">${esc(x.student.subject||'')}</div>
+       <span class="tag">${esc(x.student.ltp||'Class')}</span>
+     </td>
+     <td>${esc(x.student.room_name||x.student.room||'—')}</td>
+     <td>${esc(x.faculty.facultyName||x.faculty.faculty||'—')}</td>
+     <td>
+       <div class="match-batches">
+         ${batchArr(x.student.batch).map(b=>`<span class="batch ${b===selectedBatch?'hit':''}">${esc(b)}</span>`).join('')}
+       </div>
+     </td>
+   </tr>`).join('');
+
+ $('vChecks').innerHTML='';
+ return {matches:unique.length,mismatches:0,missing:0,total:unique.length,studentRelevant,facultyRelevant:unique.map(x=>x.faculty)};
+}
+$('vLoad').onclick=async()=>{
+ const batch=$('vBatch').value;
+ const cat=$('vCategory').value||'ALL';
+ const pid=$('vProfessor').value;
+ if(!batch||!pid)return;
+
+ $('vState').innerHTML='<span class="spinner"></span>Loading Professor timetable…';
+ $('vSummary').textContent='';
+ $('vLoad').disabled=true;
+
+ try{
+   const x=await post('/api/sru/faculty',{faculty:pid});
+   const facultyRows=Array.isArray(x.data)?x.data:flatten(x.data);
+   const studentRows=currentVerifyStudentRows();
+
+   const profLabel=$('vProfessor').selectedOptions[0]?.textContent||'';
+   const result=renderVerifyComparison(studentRows,facultyRows);
+
+   $('vSummary').textContent=
+     `${result.matches} exact match${result.matches===1?'':'es'}`;
+
+   $('vState').textContent=
+     `${batch} · ${cat==='ALL'?'All subjects':cat} · ${profLabel}`;
+ }catch(e){
+   $('vState').textContent=e.message;
+   $('vResult').className='verify-result-empty';
+   $('vResult').textContent='Comparison failed: '+e.message;
+ }finally{
+   $('vLoad').disabled=!$('vProfessor').value;
+ }
+};
+
+function currentElectiveSessions(){
+ if(!studentData||!selectedBatch)return[];
+ return flatten(studentData.data||{}).filter(r=>batchArr(r.batch).includes(selectedBatch));
+}
+function cleanSelectedSubjects(){
+ const keys=new Set();
+ ['PE2','PE3','PE4','SE2'].forEach(cat=>{
+   const el=$('p'+cat);
+   const value=el?.value||'';
+   if(value)keys.add(value);
+ });
+ return keys;
+}
+function electiveOptionsFromStudent(){
+ const rows=currentElectiveSessions();
+ ['PE2','PE3','PE4','SE2'].forEach(cat=>{
+   const sel=$('p'+cat);
+   if(!sel)return;
+   const current=sel.value;
+   const seen=new Map();
+   rows.forEach(r=>{
+     const category=electiveCategory(r.subject);
+     if(category!==cat)return;
+     const key=electiveSubjectKey(r.subject);
+     if(key && !seen.has(key))seen.set(key,String(r.subject||'').trim());
+   });
+   sel.innerHTML='';
+   sel.add(new Option(
+     seen.size ? `Select ${cat} (optional)` : `No ${cat} electives for this batch`,
+     ''
+   ));
+   [...seen.entries()]
+     .sort((a,b)=>a[1].localeCompare(b[1]))
+     .forEach(([value,label])=>sel.add(new Option(label,value)));
+   sel.disabled=false;
+   if(current && seen.has(current))sel.value=current;
+   sel.onchange=()=>renderPersonalStudentGrid();
+ });
+}
+function cleanCard(r){
+ const lab=String(r.ltp||'').toLowerCase().includes('lab');
+ const bs=batchArr(r.batch), preview=bs.slice(0,2).join(', '), full=bs.join(', ');
+ return `<div class="clean-slot ${lab?'lab':''}" title="${esc((r.subject||'')+' · '+(r.ltp||'Class')+' · '+(r.room_name||r.room||'Room')+' · '+(r.facultyName||r.faculty||'Faculty')+' · Batches: '+full)}">
+   <div class="cs-title">${esc(shortSubject(r.subject||''))}</div>
+   <div class="cs-room">${esc(r.room_name||r.room||'Room')}</div>
+   <div class="cs-meta">${esc(r.facultyName||r.faculty||'Faculty')} · ${esc(r.ltp||'Class')}</div>
+   ${bs.length?`<details class="cs-batch-details"><summary>${bs.length} batch${bs.length===1?'':'es'}${preview?` · ${esc(preview)}${bs.length>2?'…':''}`:''}</summary><div class="cs-batch-list">${esc(full)}</div></details>`:''}
+ </div>`;
+}
+function shortSubject(s){
+ return String(s||'')
+   .replace(/^PE[0-9]+\s*[-:]?\s*/i,'')
+   .replace(/^SE[0-9]+\s*[-:]?\s*/i,'')
+   .trim();
+}
+function renderPersonalStudentGrid(){
+ const head=$('studentGridHead'),body=$('studentCleanBody');
+ if(!head||!body)return;
+ if(!studentData){
+   head.innerHTML='<tr><th>DAY</th></tr>';
+   body.innerHTML='<tr><td class="clean-empty">Load your timetable to generate your weekly view.</td></tr>';
+   return;
+ }
+
+ const selected=cleanSelectedSubjects();
+ const allBatchRows=flatten(studentData.data||{}).filter(r=>batchArr(r.batch).includes(selectedBatch));
+ const rows=selected.size
+   ? allBatchRows.filter(r=>selected.has(electiveSubjectKey(r.subject)))
+   : allBatchRows;
+
+ const visibleTimes=TIMES.filter(t=>rows.some(r=>String(r.time||'').trim()===t));
+ const slots=visibleTimes.length?visibleTimes:TIMES;
+ const visibleDays=DAYS.filter(d=>rows.some(r=>normalize(r.day)===normalize(d)));
+ const days=visibleDays.length?visibleDays:DAYS;
+
+ head.innerHTML='<tr><th>DAY</th>'+slots.map(t=>`<th>${esc(t)}–${esc(nextTime(t))}</th>`).join('')+'</tr>';
+
+ let out='';
+ days.forEach(day=>{
+   const dayRows=rows.filter(r=>normalize(r.day)===normalize(day));
+   const byStart={};
+   dayRows.forEach(r=>{
+     const t=String(r.time||'').trim();
+     (byStart[t]??=[]).push(r);
+   });
+   out+=`<tr><td class="day">${esc(day)}</td>`;
+   slots.forEach(t=>{
+     const cell=byStart[t]||[];
+     out+=cell.length
+       ? `<td class="session-cell">${cell.map(cleanCard).join('')}</td>`
+       : '<td></td>';
+   });
+   out+='</tr>';
+ });
+ body.innerHTML=out||`<tr><td class="clean-empty" colspan="${slots.length+1}">No sessions match the selected electives.</td></tr>`;
+}
+function nextTime(t){const [h,m]=t.split(':').map(Number);let nh=h+1;return String(nh).padStart(2,'0')+':'+String(m).padStart(2,'0')}
+
+function exportTablePdf(){window.print()}
+function exportTableExcel(headId, title, filename){
+ const table=$(headId)?.parentElement;
+ if(!table)return;
+ const head=$(headId); const clone=document.createElement("table"); clone.className=table.className; clone.appendChild(head.cloneNode(true)); const body=head.nextElementSibling; if(body) clone.appendChild(body.cloneNode(true));
+ const htmlDoc=`<html><head><meta charset="utf-8"><style>
+ body{font-family:Arial;font-size:10px}table{border-collapse:collapse;width:100%}
+ th,td{border:1px solid #999;padding:6px;vertical-align:top}th{background:#eee}
+ .clean-slot{min-height:40px}.cs-title{font-weight:700}.cs-room,.cs-meta,.cs-batches{font-size:8px}
+ .card{border:1px solid #ccc;padding:4px;margin-bottom:4px}.subject{font-weight:700}.sub{font-size:8px;color:#333}.batches{margin-top:2px;font-size:8px}
+ </style></head><body><h2>${title}</h2>${clone.outerHTML}
+ 
+</body></html>`;
+ const blob=new Blob([htmlDoc],{type:'application/vnd.ms-excel'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+ a.download=filename+'.xls';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+function exportTablePng(headId, filename){
+ const table=$(headId)?.parentElement;
+ if(!table)return;
+ const head=$(headId); const body=head.nextElementSibling; const rows=[...head.querySelectorAll("tr"), ...(body ? body.querySelectorAll("tr") : [])];
+ const cols=Math.max(...rows.map(r=>r.cells.length));
+ const colW=120,rowH=78,pad=20,w=cols*colW+pad*2,h=rows.length*rowH+pad*2;
+ const canvas=document.createElement('canvas');canvas.width=w*2;canvas.height=h*2;
+ const ctx=canvas.getContext('2d');ctx.scale(2,2);
+ ctx.fillStyle='#ffffff';ctx.fillRect(0,0,w,h);
+ ctx.font='700 10px Arial';ctx.textBaseline='middle';
+ rows.forEach((row,ri)=>{
+   [...row.cells].forEach((cell,ci)=>{
+     const x=pad+ci*colW,y=pad+ri*rowH;
+     ctx.fillStyle=ri===0?'#f0f1f3':(ci===0?'#f1f2f4':'#ffffff');
+     ctx.fillRect(x,y,colW-2,rowH-2);
+     ctx.strokeStyle='#d8dde3';ctx.strokeRect(x,y,colW-2,rowH-2);
+     const text=(cell.innerText||'').replace(/\s+/g,' ').trim();
+     ctx.fillStyle=ri===0&&ci===0?'#fff':'#17202a';
+     if(ri===0&&ci===0){ctx.fillStyle='#111';ctx.fillRect(x,y,colW-2,rowH-2);ctx.fillStyle='#fff'}
+     const words=text.split(' ');let line='',lines=[];
+     words.forEach(word=>{const test=line?line+' '+word:word;if(ctx.measureText(test).width>colW-12){if(line)lines.push(line);line=word}else line=test});
+     if(line)lines.push(line);
+     lines.slice(0,5).forEach((ln,k)=>ctx.fillText(ln,x+6,y+14+k*11));
+   });
+ });
+ canvas.toBlob(blob=>{if(!blob)return;const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename+'.png';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)},'image/png');
+}
+
+$('studentExportPng').onclick=()=>exportTablePng('studentGridHead', 'SRU_Student_Timetable');
+$('studentExportPdf').onclick=exportTablePdf;
+$('studentExportXls').onclick=()=>exportTableExcel('studentGridHead', 'My SRU Timetable', 'SRU_Student_Timetable');
+
+$('facultyExportPng').onclick=()=>exportTablePng('facultyGridHead', 'SRU_Faculty_Timetable');
+$('facultyExportPdf').onclick=exportTablePdf;
+$('facultyExportXls').onclick=()=>exportTableExcel('facultyGridHead', 'Faculty Timetable', 'SRU_Faculty_Timetable');
+
+$('roomsExportPng').onclick=()=>exportTablePng('roomsGridHead', 'SRU_Room_Timetable');
+$('roomsExportPdf').onclick=exportTablePdf;
+$('roomsExportXls').onclick=()=>exportTableExcel('roomsGridHead', 'Room Timetable', 'SRU_Room_Timetable');
+
+loadMeta();
+try{refreshVerifyBatches()}catch{}
+show(location.hash.slice(1)||'home');
+// v31: keep batches available to Cross Verification after they are loaded on Student.
+const _v31OriginalStudentLoad = $('sLoad').onclick;
+
+
+</script><script id="v41-home-script">
+(function(){
+  function mountHome(){
+    const home=document.getElementById('home');
+    if(!home || home.dataset.v41Mounted==='1') return;
+    home.dataset.v41Mounted='1';
+    home.innerHTML=`<div class="home-v40"><div class="v40-shell">
+      <section class="v40-hero"><div>
+        <div class="v40-kicker">SR UNIVERSITY · TIMETABLE PORTAL</div>
+        <h1>Your timetable.<br><span>Simplified.</span></h1>
+        <p class="v40-lead">One clean place to view student and faculty schedules, explore rooms, verify classes and find available spaces — using the official SRU timetable data.</p>
+        <div class="v40-actions"><button class="v40-btn primary" data-go="student">Open Student Timetable →</button><button class="v40-btn" data-go="faculty">Explore Faculty</button></div>
+      </div><div class="v40-status"><div class="v40-status-top"><strong>SRU TT</strong><span class="v40-live"><i class="v40-dot"></i> Official source</span></div><div class="v40-mini-grid">
+        <div class="v40-mini"><b>Student</b><span>Personal weekly timetable with optional elective filters.</span></div>
+        <div class="v40-mini"><b>Faculty</b><span>Weekly teaching schedule with subjects, rooms and batches.</span></div>
+        <div class="v40-mini"><b>Rooms</b><span>View the timetable assigned to a specific room.</span></div>
+        <div class="v40-mini"><b>Verify</b><span>Cross-check a student's class against a professor.</span></div>
+      </div></div></section>
+      <section class="v40-section"><div class="v40-section-head"><div><h2>Everything you need.</h2><p>Choose a workspace and get straight to the timetable.</p></div></div>
+      <div class="v40-cards">
+        <button class="v40-card" data-go="student"><div><div class="v40-icon">ST</div><h3>Student Timetable</h3><p>See your complete batch timetable and optionally filter PE/SE subjects.</p></div><span class="v40-arrow">↗</span></button>
+        <button class="v40-card" data-go="faculty"><div><div class="v40-icon">FC</div><h3>Faculty Timetable</h3><p>Find a professor and view their complete weekly teaching schedule.</p></div><span class="v40-arrow">↗</span></button>
+        <button class="v40-card" data-go="rooms"><div><div class="v40-icon">RM</div><h3>Room Timetable</h3><p>Check which classes occupy a room across the week.</p></div><span class="v40-arrow">↗</span></button>
+        <button class="v40-card" data-go="verify"><div><div class="v40-icon">VR</div><h3>Cross Verification</h3><p>Compare a student's class with a professor's schedule at the exact time.</p></div><span class="v40-arrow">↗</span></button>
+        <button class="v40-card" data-go="free"><div><div class="v40-icon">FR</div><h3>Free Rooms</h3><p>Open the official SRU workflow for checking room availability.</p></div><span class="v40-arrow">↗</span></button>
+      </div></section>
+      <div class="v40-bottom"><span>SRU TT · Student-focused timetable interface</span><span>Data provided by the official SRU timetable source</span></div>
+    </div></div>`;
+    home.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',()=>show(el.dataset.go)));
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mountHome);else mountHome();
+})();
+if('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(err => console.error('SW reg failed', err));
+  });
+}
+</script>
+</body><style id="time-progress-css">
+/* -- Time Progress: Today Row (student view) -- */
+.row-today > td { background: rgba(103,232,249,0.04) !important; }
+.row-today > td.day { color: #67e8f9 !important; position: relative; }
+.row-today > td.day::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: #67e8f9; border-radius: 0 3px 3px 0; }
+
+/* -- Time Progress: Today Column (faculty/room view) -- */
+td.col-today { background: rgba(103,232,249,0.035) !important; }
+#faculty td.col-today, #rooms td.col-today { background: rgba(17,20,24,0.04) !important; }
+
+/* -- Completed slots -- */
+.slot-done { opacity: 0.32 !important; transition: opacity 0.3s; }
+.slot-done:hover { opacity: 0.7 !important; }
+.slot-done .cs-title, .slot-done .subject { text-decoration: line-through !important; text-decoration-thickness: 1px !important; text-decoration-color: rgba(255,255,255,0.18) !important; }
+#faculty .slot-done .subject, #rooms .slot-done .subject { text-decoration-color: rgba(0,0,0,0.18) !important; }
+
+/* -- Current slot -- */
+.slot-now { box-shadow: inset 3px 0 0 #67e8f9 !important; background: rgba(103,232,249,0.06) !important; }
+#faculty .slot-now, #rooms .slot-now { box-shadow: inset 3px 0 0 #111 !important; background: rgba(17,20,24,0.04) !important; }
+
+/* -- Current time row indicator (faculty view) -- */
+tr.time-row-now > td:first-child { color: #67e8f9 !important; }
+#faculty tr.time-row-now > td:first-child, #rooms tr.time-row-now > td:first-child { color: #111 !important; font-weight: 900; }
+</style>
+<script id="time-progress-script">
+(function(){
+  const DAY_NAMES = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  
+  function parseTime(s) {
+    const m = String(s||'').match(/(\d{1,2}):(\d{2})/);
+    return m ? parseInt(m[1]) * 60 + parseInt(m[2]) : -1;
+  }
+
+  function markTimeProgress() {
+    const now = new Date();
+    const today = DAY_NAMES[now.getDay()];
+    const mins = now.getHours() * 60 + now.getMinutes();
+
+    // -- Student timetable (days = rows, times = columns) --
+    const sHead = document.getElementById('studentGridHead');
+    const sBody = document.getElementById('studentCleanBody');
+    if (sHead && sBody && sBody.children.length) {
+      const ths = sHead.querySelectorAll('th');
+      const colTimes = [];
+      ths.forEach((th, i) => {
+        if (i === 0) return;
+        const start = parseTime(th.textContent);
+        if (start >= 0) colTimes.push({ idx: i, start: start });
+      });
+      colTimes.forEach((c, i) => {
+        c.end = i < colTimes.length - 1 ? colTimes[i + 1].start : c.start + 60;
+      });
+
+      sBody.querySelectorAll('tr').forEach(row => {
+        const dayCell = row.querySelector('td.day');
+        if (!dayCell) return;
+        const isToday = dayCell.textContent.trim().toLowerCase() === today.toLowerCase();
+        row.classList.toggle('row-today', isToday);
+        
+        const tds = [...row.querySelectorAll('td')];
+        tds.forEach((td, ci) => {
+          if (ci === 0) return;
+          td.classList.remove('slot-done', 'slot-now');
+          if (!isToday) return;
+          const slot = colTimes[ci - 1];
+          if (!slot) return;
+          if (mins >= slot.end) td.classList.add('slot-done');
+          else if (mins >= slot.start && mins < slot.end) td.classList.add('slot-now');
+        });
+      });
+    }
+
+    // -- Faculty / Room timetable (times = rows, days = columns) --
+    ['fBody', 'rBody'].forEach(id => {
+      const body = document.getElementById(id);
+      if (!body || !body.children.length) return;
+      
+      body.querySelectorAll('tr').forEach(row => {
+        const timeCell = row.querySelector('td:first-child');
+        if (!timeCell) return;
+        const slotStart = parseTime(timeCell.textContent);
+        if (slotStart < 0) return;
+        const slotEnd = slotStart + 60;
+        const isNowRow = mins >= slotStart && mins < slotEnd;
+        row.classList.toggle('time-row-now', isNowRow);
+        
+        row.querySelectorAll('td[data-day]').forEach(td => {
+          const isToday = td.getAttribute('data-day').toLowerCase() === today.toLowerCase();
+          td.classList.remove('slot-done', 'slot-now', 'col-today');
+          if (!isToday) return;
+          td.classList.add('col-today');
+          if (mins >= slotEnd) td.classList.add('slot-done');
+          else if (mins >= slotStart && mins < slotEnd) td.classList.add('slot-now');
+        });
+      });
+    });
+  }
+
+  // Run after renders via MutationObserver
+  ['studentCleanBody', 'fBody', 'rBody'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) new MutationObserver(() => setTimeout(markTimeProgress, 50)).observe(el, { childList: true, subtree: true });
+  });
+
+  // Auto-update every 60 seconds
+  setInterval(markTimeProgress, 60000);
+
+  // Initial run
+  setTimeout(markTimeProgress, 500);
+})();
+</script>
+</html>
+

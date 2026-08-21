@@ -1,0 +1,2 @@
+const {getJSON,ok,fail}=require('./_lib');
+module.exports=async(req,res)=>{try{const degree=String(req.query.degree||'').trim(),year=String(req.query.year||'').trim();if(!degree||!year)return res.status(400).json({success:false,error:'degree and year are required'});return ok(res,await getJSON('/get-batchbpublic?degree='+encodeURIComponent(degree)+'&year='+encodeURIComponent(year)))}catch(e){return fail(res,e)}};

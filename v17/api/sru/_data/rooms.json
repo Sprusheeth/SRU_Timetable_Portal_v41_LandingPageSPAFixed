@@ -1,0 +1,902 @@
+[
+  {
+    "value": "171",
+    "label": "001 - Field instructional-1"
+  },
+  {
+    "value": "172",
+    "label": "002 - Field instructional-2"
+  },
+  {
+    "value": "173",
+    "label": "003 - Field instructional-3"
+  },
+  {
+    "value": "174",
+    "label": "004 - Field instructional-4"
+  },
+  {
+    "value": "179",
+    "label": "10001-B_BL10-GF - Computing Facility"
+  },
+  {
+    "value": "108",
+    "label": "10001-BL10-GF - Computing Facility"
+  },
+  {
+    "value": "180",
+    "label": "10002-B_BL10-GF - Computing Facility"
+  },
+  {
+    "value": "109",
+    "label": "10002-BL10-GF - Computing Facility"
+  },
+  {
+    "value": "181",
+    "label": "10003-B_BL10-GF - Computing Facility"
+  },
+  {
+    "value": "110",
+    "label": "10003-BL10-GF - Computing Facility"
+  },
+  {
+    "value": "225",
+    "label": "10005-BL10-GF - Lecture Hall"
+  },
+  {
+    "value": "237",
+    "label": "1001-BL1-GF - Epics Hall"
+  },
+  {
+    "value": "182",
+    "label": "10101-B_BL10-FF - Computing Facility"
+  },
+  {
+    "value": "112",
+    "label": "10101-BL10-FF - Computing Facility"
+  },
+  {
+    "value": "183",
+    "label": "10102-B_BL10-FF - Computing Facility"
+  },
+  {
+    "value": "113",
+    "label": "10102-BL10-FF - Computing Facility"
+  },
+  {
+    "value": "184",
+    "label": "10103-B_BL10-FF - Computing Facility"
+  },
+  {
+    "value": "114",
+    "label": "10103-BL10-FF - Computing Facility"
+  },
+  {
+    "value": "115",
+    "label": "10104-BL10-FF - Lecture Hall"
+  },
+  {
+    "value": "116",
+    "label": "10206-BL10-SF - Lecture Hall"
+  },
+  {
+    "value": "227",
+    "label": "11003-A-BL11-GF - Computing Facility 40"
+  },
+  {
+    "value": "228",
+    "label": "11003-B-BL11-GF - Computing Facility 40"
+  },
+  {
+    "value": "229",
+    "label": "11004-A-BL11-GF - Computing Facility 41"
+  },
+  {
+    "value": "230",
+    "label": "11004-B-BL11-GF - Computing Facility 41"
+  },
+  {
+    "value": "121",
+    "label": "11007-BL11-GF - Lecture hall"
+  },
+  {
+    "value": "1",
+    "label": "1101-BL1-FF - Lecture Hall"
+  },
+  {
+    "value": "231",
+    "label": "11010-BL11-GF - Lecture hall"
+  },
+  {
+    "value": "2",
+    "label": "1102-BL1-FF - Lecture Hall"
+  },
+  {
+    "value": "3",
+    "label": "1103-BL1-FF - Lecture Hall"
+  },
+  {
+    "value": "175",
+    "label": "1104-B_BL1-FF - Advanced Computing Facility 1"
+  },
+  {
+    "value": "16",
+    "label": "1104-BL1-FF - Advanced Computing Facility 1"
+  },
+  {
+    "value": "204",
+    "label": "1105-B_BL1-FF - Computing Facility 2"
+  },
+  {
+    "value": "17",
+    "label": "1105-BL1-FF -  Computing Facility 2"
+  },
+  {
+    "value": "209",
+    "label": "1106-B_BL1-FF - Computing Facility 3"
+  },
+  {
+    "value": "18",
+    "label": "1106-BL1-FF -  Computing Facility 3"
+  },
+  {
+    "value": "4",
+    "label": "1107-BL1-FF - Lecture Hall"
+  },
+  {
+    "value": "5",
+    "label": "1108-BL1-FF - Lecture Hall"
+  },
+  {
+    "value": "6",
+    "label": "1109-BL1-FF - Lecture Hall"
+  },
+  {
+    "value": "122",
+    "label": "11101-BL11-FF - Lecture hall"
+  },
+  {
+    "value": "232",
+    "label": "11102-A_BL11-FF - Computing Facility 42"
+  },
+  {
+    "value": "233",
+    "label": "11102-B_BL11-FF - Computing Facility 42"
+  },
+  {
+    "value": "125",
+    "label": "11106-BL11-FF - Lecture Hall"
+  },
+  {
+    "value": "234",
+    "label": "11108-BL11-FF - Lecture hall"
+  },
+  {
+    "value": "7",
+    "label": "1111-BL1-FF - Lecture Hall"
+  },
+  {
+    "value": "210",
+    "label": "1114-B_BL1-FF - Computing Facility 4"
+  },
+  {
+    "value": "19",
+    "label": "1114-BL1-FF -  Computing Facility 4"
+  },
+  {
+    "value": "8",
+    "label": "1115-BL1-FF - Lecture Hall"
+  },
+  {
+    "value": "126",
+    "label": "11201-BL11-SF - Lecture hall"
+  },
+  {
+    "value": "235",
+    "label": "11202-A-BL11-SF - Computing Facility 43"
+  },
+  {
+    "value": "236",
+    "label": "11202-B-BL11-SF - Computing Facility 43"
+  },
+  {
+    "value": "128",
+    "label": "11206-BL11-SF - Lecture Hall"
+  },
+  {
+    "value": "129",
+    "label": "11209-BL11-SF - Lecture Hall"
+  },
+  {
+    "value": "211",
+    "label": "1201-B_BL1-SF - Computing Facility 5"
+  },
+  {
+    "value": "20",
+    "label": "1201-BL1-SF -  Computing Facility 5"
+  },
+  {
+    "value": "9",
+    "label": "1202-BL1-SF - Lecture Hall"
+  },
+  {
+    "value": "10",
+    "label": "1205-BL1-SF - Lecture Hall"
+  },
+  {
+    "value": "11",
+    "label": "1206-BL1-SF - Lecture Hall"
+  },
+  {
+    "value": "12",
+    "label": "1207-BL1-SF - Lecture Hall"
+  },
+  {
+    "value": "212",
+    "label": "1209-B_BL1-SF - Computing Facility 6"
+  },
+  {
+    "value": "21",
+    "label": "1209-BL1-SF -  Computing Facility 6"
+  },
+  {
+    "value": "213",
+    "label": "1210-B_BL1-SF - Computing Facility 7"
+  },
+  {
+    "value": "22",
+    "label": "1210-BL1-SF -  Computing Facility 7"
+  },
+  {
+    "value": "13",
+    "label": "1213-BL1-SF - Lecture Hall"
+  },
+  {
+    "value": "14",
+    "label": "1215-BL1-SF - Lecture Hall"
+  },
+  {
+    "value": "15",
+    "label": "1216-BL1-SF - Lecture Hall"
+  },
+  {
+    "value": "23",
+    "label": "2001-BL2-GF - Lecture Hall"
+  },
+  {
+    "value": "24",
+    "label": "2002-BL2-GF - Lecture Hall"
+  },
+  {
+    "value": "25",
+    "label": "2003-BL2-GF - Lecture Hall"
+  },
+  {
+    "value": "26",
+    "label": "2006-BL2-GF - Lecture Hall"
+  },
+  {
+    "value": "27",
+    "label": "2007-BL2-GF - Lecture Hall"
+  },
+  {
+    "value": "28",
+    "label": "2008-BL2-GF - Lecture Hall"
+  },
+  {
+    "value": "130",
+    "label": "2012-BL2-GF - Control Systems Lab"
+  },
+  {
+    "value": "131",
+    "label": "2014-BL2-GF - Power Electronics Lab"
+  },
+  {
+    "value": "214",
+    "label": "2015-B_BL2-GF - Computing Facility 8"
+  },
+  {
+    "value": "44",
+    "label": "2015-BL2-GF -  Computing Facility 8"
+  },
+  {
+    "value": "132",
+    "label": "2017-BL2-GF - Electrical Machine Lab"
+  },
+  {
+    "value": "29",
+    "label": "2101-BL2-FF - Lecture Hall"
+  },
+  {
+    "value": "30",
+    "label": "2102-BL2-FF - Lecture Hall"
+  },
+  {
+    "value": "31",
+    "label": "2103-BL2-FF - Lecture Hall"
+  },
+  {
+    "value": "133",
+    "label": "2106-BL2-FF - Microelectronics & VLSI Design Lab"
+  },
+  {
+    "value": "134",
+    "label": "2107-BL2-FF - Analog Circuit Analysis Lab"
+  },
+  {
+    "value": "135",
+    "label": "2108-BL2-FF - Analog & Digital Communication Lab"
+  },
+  {
+    "value": "176",
+    "label": "2111-B_BL2-FF - Advanced Computing Facility 2"
+  },
+  {
+    "value": "168",
+    "label": "2111-BL2-FF - Advanced Computing Facility 2"
+  },
+  {
+    "value": "169",
+    "label": "2112-BL2-FF - Electronic Devices and Circuits Lab"
+  },
+  {
+    "value": "136",
+    "label": "2113-BL2-FF - Signals & System Lab"
+  },
+  {
+    "value": "137",
+    "label": "2114-BL2-FF - Smart Product Design Lab"
+  },
+  {
+    "value": "138",
+    "label": "2115-BL2-FF - Power Electronics Simulation Lab"
+  },
+  {
+    "value": "32",
+    "label": "2116-BL2-FF - Lecture Hall"
+  },
+  {
+    "value": "33",
+    "label": "2117-BL2-FF - Lecture Hall"
+  },
+  {
+    "value": "34",
+    "label": "2118-BL2-FF - Lecture Hall"
+  },
+  {
+    "value": "35",
+    "label": "2201-BL2-SF - Lecture Hall"
+  },
+  {
+    "value": "36",
+    "label": "2202-BL2-SF - Lecture Hall"
+  },
+  {
+    "value": "37",
+    "label": "2203-BL2-SF - Lecture Hall"
+  },
+  {
+    "value": "38",
+    "label": "2206-BL2-SF - Lecture Hall"
+  },
+  {
+    "value": "39",
+    "label": "2207-BL2-SF - Lecture Hall"
+  },
+  {
+    "value": "40",
+    "label": "2208-BL2-SF - Lecture Hall"
+  },
+  {
+    "value": "177",
+    "label": "2211-B_BL2-SF - Advanced Computing Facility 3"
+  },
+  {
+    "value": "45",
+    "label": "2211-BL2-SF - Advanced Computing Facility 3"
+  },
+  {
+    "value": "215",
+    "label": "2213-B_BL2-SF - Computing Facility 9"
+  },
+  {
+    "value": "46",
+    "label": "2213-BL2-SF - Computing Facility 9"
+  },
+  {
+    "value": "196",
+    "label": "2214-B_BL2-SF - Computing Facility 10"
+  },
+  {
+    "value": "47",
+    "label": "2214-BL2-SF - Computing Facility 10"
+  },
+  {
+    "value": "41",
+    "label": "2216-BL2-SF - Lecture Hall"
+  },
+  {
+    "value": "42",
+    "label": "2217-BL2-SF - Lecture Hall"
+  },
+  {
+    "value": "43",
+    "label": "2218-BL2-SF - Lecture Hall"
+  },
+  {
+    "value": "197",
+    "label": "3001-B_BL3-GF - Computing Facility 11"
+  },
+  {
+    "value": "66",
+    "label": "3001-BL3-GF -  Computing Facility 11"
+  },
+  {
+    "value": "198",
+    "label": "3007-B_BL3-GF - Computing Facility 14"
+  },
+  {
+    "value": "67",
+    "label": "3007-BL3-GF -  Computing Facility 14"
+  },
+  {
+    "value": "224",
+    "label": "3011-BL3-GF - Lecture hall"
+  },
+  {
+    "value": "219",
+    "label": "3013_A - Faculty Cabin"
+  },
+  {
+    "value": "218",
+    "label": "3017_A - Faculty Cabin"
+  },
+  {
+    "value": "199",
+    "label": "3101-B_BL3-FF - Computing Facility 15"
+  },
+  {
+    "value": "68",
+    "label": "3101-BL3-FF -  Computing Facility 15"
+  },
+  {
+    "value": "200",
+    "label": "3102-B_BL3-FF - Computing Facility 16"
+  },
+  {
+    "value": "69",
+    "label": "3102-BL3-FF -  Computing Facility 16"
+  },
+  {
+    "value": "201",
+    "label": "3103-B_BL3-FF - Computing Facility 17"
+  },
+  {
+    "value": "70",
+    "label": "3103-BL3-FF -  Computing Facility 17"
+  },
+  {
+    "value": "48",
+    "label": "3104-BL3-FF - Lecture Hall"
+  },
+  {
+    "value": "49",
+    "label": "3105-BL3-FF - Lecture Hall"
+  },
+  {
+    "value": "50",
+    "label": "3106-BL3-FF - Lecture Hall"
+  },
+  {
+    "value": "202",
+    "label": "3107-B_BL3-FF - Computing Facility 18"
+  },
+  {
+    "value": "71",
+    "label": "3107-BL3-FF -  Computing Facility 18"
+  },
+  {
+    "value": "220",
+    "label": "3110_A - Faculty Cabin"
+  },
+  {
+    "value": "203",
+    "label": "3111-B_BL3-FF - Computing Facility 19"
+  },
+  {
+    "value": "72",
+    "label": "3111-BL3-FF -  Computing Facility 19"
+  },
+  {
+    "value": "139",
+    "label": "3112-A_BL3-FF - Chemistry Lab"
+  },
+  {
+    "value": "217",
+    "label": "3112_BL3-FF - Chemistry Lab"
+  },
+  {
+    "value": "51",
+    "label": "3113-BL3-FF - Lecture Hall"
+  },
+  {
+    "value": "52",
+    "label": "3114-BL3-FF - Lecture Hall"
+  },
+  {
+    "value": "53",
+    "label": "3115-BL3-FF - Lecture Hall"
+  },
+  {
+    "value": "140",
+    "label": "3117-BL3-FF - Physics Lab"
+  },
+  {
+    "value": "216",
+    "label": "3118_BL3-FF - Physics Lab"
+  },
+  {
+    "value": "205",
+    "label": "3201-B_BL3-SF - Computing Facility 20"
+  },
+  {
+    "value": "73",
+    "label": "3201-BL3-SF - Computing Facility 20"
+  },
+  {
+    "value": "54",
+    "label": "3202-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "55",
+    "label": "3203-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "56",
+    "label": "3204-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "57",
+    "label": "3205-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "58",
+    "label": "3206-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "59",
+    "label": "3207-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "60",
+    "label": "3208-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "61",
+    "label": "3209-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "206",
+    "label": "3212-B_BL3-SF - Computing Facility 21"
+  },
+  {
+    "value": "74",
+    "label": "3212-BL3-SF - Computing Facility 21"
+  },
+  {
+    "value": "207",
+    "label": "3213-B_BL3-SF - Computing Facility 22"
+  },
+  {
+    "value": "75",
+    "label": "3213-BL3-SF - Computing Facility 22"
+  },
+  {
+    "value": "62",
+    "label": "3215-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "63",
+    "label": "3216-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "64",
+    "label": "3217-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "65",
+    "label": "3218-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "221",
+    "label": "3219-BL3-SF - Lecture Hall"
+  },
+  {
+    "value": "222",
+    "label": "3220-BL3-SF - Lecture hall"
+  },
+  {
+    "value": "223",
+    "label": "3221-BL3-SF - Lecture hall"
+  },
+  {
+    "value": "148",
+    "label": "4101-BL4-GF - Machine Tools and Metrology Lab"
+  },
+  {
+    "value": "149",
+    "label": "4102-BL4-GF - Highways Lab"
+  },
+  {
+    "value": "141",
+    "label": "4406-BL4-GF - Survey Lab"
+  },
+  {
+    "value": "142",
+    "label": "4407-BL4-GF - Concrete Lab"
+  },
+  {
+    "value": "145",
+    "label": "4610-BL4-GF - Fluid Mechanics Lab"
+  },
+  {
+    "value": "144",
+    "label": "4711-BL4-GF - Geotechnical Lab"
+  },
+  {
+    "value": "143",
+    "label": "4712-BL4-GF - SOM Lab"
+  },
+  {
+    "value": "147",
+    "label": "4813-BL4-GF - Production Technology Lab"
+  },
+  {
+    "value": "146",
+    "label": "4814-BL4-GF - Heat Transfer Lab"
+  },
+  {
+    "value": "208",
+    "label": "5007-B_BL5-GF - Computing Facility 23"
+  },
+  {
+    "value": "82",
+    "label": "5007-BL5-GF - Computing Facility 23"
+  },
+  {
+    "value": "150",
+    "label": "5012-BL5-GF - Agronomy Lab"
+  },
+  {
+    "value": "76",
+    "label": "5015-BL5-GF - Lecture Hall"
+  },
+  {
+    "value": "77",
+    "label": "5016-BL5-GF - Lecture Hall"
+  },
+  {
+    "value": "78",
+    "label": "5017-BL5-GF - Lecture Hall"
+  },
+  {
+    "value": "79",
+    "label": "5018-BL5-GF - Lecture Hall"
+  },
+  {
+    "value": "80",
+    "label": "5019-BL5-GF - Lecture Hall"
+  },
+  {
+    "value": "81",
+    "label": "5020-BL5-GF - Lecture Hall"
+  },
+  {
+    "value": "151",
+    "label": "5022-BL5-GF - Central Laboratory"
+  },
+  {
+    "value": "152",
+    "label": "5023-BL5-GF - Soil Science & Biochemistry Lab"
+  },
+  {
+    "value": "153",
+    "label": "5102-BL5-FF - Agricultural Economics Lab"
+  },
+  {
+    "value": "154",
+    "label": "6101-BL6-FF - Plant Pathology Lab"
+  },
+  {
+    "value": "155",
+    "label": "6102-BL6-FF - Horticulture Lab"
+  },
+  {
+    "value": "156",
+    "label": "6103-BL6-FF - Genetics & Plant Breeding / Crop Physiology Lab"
+  },
+  {
+    "value": "157",
+    "label": "6104-BL6-FF - Agronomy Lab"
+  },
+  {
+    "value": "158",
+    "label": "6201-BL6-SF - Agricultural Engineering Lab"
+  },
+  {
+    "value": "159",
+    "label": "6202-BL6-SF - Agricultural Extension Education Lab"
+  },
+  {
+    "value": "160",
+    "label": "6205-BL6-SF - Animal Science Lab"
+  },
+  {
+    "value": "161",
+    "label": "6206-BL6-SF - Entomology Lab"
+  },
+  {
+    "value": "178",
+    "label": "7003-B_BL7-GF - Advanced Computing Facility 4"
+  },
+  {
+    "value": "83",
+    "label": "7003-BL7-GF - Advanced Computing Facility 4"
+  },
+  {
+    "value": "163",
+    "label": "7004-BL7-GF - Maker Zone"
+  },
+  {
+    "value": "162",
+    "label": "7005-BL7-GF - Maker Machinery Zone"
+  },
+  {
+    "value": "164",
+    "label": "7102-BL7-FF - Centre for embedded System & IOT Lab"
+  },
+  {
+    "value": "165",
+    "label": "7103-BL7-FF - PLC and Automation Lab"
+  },
+  {
+    "value": "166",
+    "label": "7105-BL7-FF - Catapult Zone"
+  },
+  {
+    "value": "167",
+    "label": "7204-BL7-SF - Media Studio Lecture"
+  },
+  {
+    "value": "189",
+    "label": "8001-B_BL8-GF - Computing Facility"
+  },
+  {
+    "value": "84",
+    "label": "8001-BL8-GF - Computing Facility"
+  },
+  {
+    "value": "190",
+    "label": "8002-B_BL8-GF - Computing Facility"
+  },
+  {
+    "value": "85",
+    "label": "8002-BL8-GF - Computing Facility"
+  },
+  {
+    "value": "191",
+    "label": "8003-B_BL8-GF - Computing Facility"
+  },
+  {
+    "value": "86",
+    "label": "8003-BL8-GF - Computing Facility"
+  },
+  {
+    "value": "87",
+    "label": "8004-BL8-GF - Lecture Hall"
+  },
+  {
+    "value": "88",
+    "label": "8005-BL8-GF - Collaborative Class"
+  },
+  {
+    "value": "89",
+    "label": "8006-BL8-GF - Collaborative Class"
+  },
+  {
+    "value": "90",
+    "label": "8008-BL8-GF - Lecture Hall"
+  },
+  {
+    "value": "192",
+    "label": "8101-B_BL8-FF - Computing Facility"
+  },
+  {
+    "value": "91",
+    "label": "8101-BL8-FF - Computing Facility"
+  },
+  {
+    "value": "193",
+    "label": "8102-B_BL8-FF - Computing Facility"
+  },
+  {
+    "value": "92",
+    "label": "8102-BL8-FF - Computing Facility"
+  },
+  {
+    "value": "194",
+    "label": "8103-B_BL8-FF - Computing Facility"
+  },
+  {
+    "value": "93",
+    "label": "8103-BL8-FF - Computing Facility"
+  },
+  {
+    "value": "94",
+    "label": "8104-BL8-FF - Lecture Hall"
+  },
+  {
+    "value": "95",
+    "label": "8105-BL8-FF - Lecture Hall"
+  },
+  {
+    "value": "96",
+    "label": "8106-BL8-FF - Lecture Hall"
+  },
+  {
+    "value": "97",
+    "label": "8108-BL8-FF - Lecture Hall"
+  },
+  {
+    "value": "98",
+    "label": "8206-BL8-SF - Lecture Hall"
+  },
+  {
+    "value": "195",
+    "label": "8207-B_BL8-SF - Computing Facility"
+  },
+  {
+    "value": "99",
+    "label": "8207-BL8-SF - Computing Facility"
+  },
+  {
+    "value": "100",
+    "label": "8208-BL8-SF - Lecture Hall"
+  },
+  {
+    "value": "101",
+    "label": "8209-BL8-SF - Lecture Hall"
+  },
+  {
+    "value": "102",
+    "label": "9101-BL9-FF - Lecture Hall"
+  },
+  {
+    "value": "103",
+    "label": "9102-BL9-FF - Lecture Hall"
+  },
+  {
+    "value": "104",
+    "label": "9103-BL9-FF - Lecture Hall"
+  },
+  {
+    "value": "105",
+    "label": "9104-BL9-FF - Lecture Hall"
+  },
+  {
+    "value": "106",
+    "label": "9105-BL9-FF - Lecture Hall"
+  },
+  {
+    "value": "107",
+    "label": "9106-BL9-FF - Lecture Hall"
+  },
+  {
+    "value": "111",
+    "label": "Dummy1 - Dummy"
+  },
+  {
+    "value": "119",
+    "label": "Dummy2 - Dummy"
+  }
+]

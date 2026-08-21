@@ -1,0 +1,2 @@
+const {postPage,ok,fail}=require('./_lib');
+module.exports=async(req,res)=>{try{if(req.method!=='POST')return res.status(405).json({success:false,error:'POST required'});const batch=String(req.body?.batch||'').trim(),year=String(req.body?.year||'').trim();if(!batch||!year)return res.status(400).json({success:false,error:'batch and year are required'});return ok(res,await postPage('/batchReport','/searchBatchReportPublic',{batch,year}))}catch(e){return fail(res,e)}};

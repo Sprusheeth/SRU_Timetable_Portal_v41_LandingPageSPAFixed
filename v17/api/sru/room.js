@@ -1,0 +1,2 @@
+const {postPage,ok,fail}=require('./_lib');
+module.exports=async(req,res)=>{try{if(req.method!=='POST')return res.status(405).json({success:false,error:'POST required'});const room=String(req.body?.room||'').trim();if(!room)return res.status(400).json({success:false,error:'room is required'});return ok(res,await postPage('/room_report','/searchRoomReportPublic',{room}))}catch(e){return fail(res,e)}};
